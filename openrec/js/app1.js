@@ -8,7 +8,13 @@ $(document).ready(function(){
             data: {nrp: nrp},
             dataType: 'json',
             success: function( response ){
-                console.log("1");
+                if(response['status']==0){
+                    alert(response['error']);
+                    window.location = response['redirect'];
+                }else{
+                    alert(response['error']);
+                    window.location = response['redirect'];
+                }
             },error: function(e){
                 
             }
