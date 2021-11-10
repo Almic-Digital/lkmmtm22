@@ -15,22 +15,14 @@ if ($_SERVER['REQUEST_METHOD'] == 'GET') {
 
     $nrp = $_SESSION['nrp'];
 
-    $sql = "SELECT * FROM openrec WHERE nrp = '".$nrp."' ";
-    $query = mysqli_query($con,$sql);
-    $row = mysqli_num_rows($query);
-    $data = mysqli_fetch_assoc($query);
-
-    if($row>=1){
-        $result['status'] = 1;
-        if($data['cv']!=NULL){
-            $result['status'] = 2;
+    $nrp = strtoupper($nrp);
 
             $sql = "SELECT * FROM jadwal_openrec WHERE nrp_openrec = '".$nrp."' ";
             $query = mysqli_query($con,$sql);
             $row = mysqli_num_rows($query);
             
             if($row>=1){
-                $result['status'] = 3;
+                $result['status'] = 1;
                 $data = mysqli_fetch_assoc($query);
 
                 $nrppanit = $data['nrp_panit'];
@@ -51,8 +43,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'GET') {
 
             }
 
-        }
-    }
+       
+    
     echo json_encode($result);
 } else {
     header("HTTP/1.1 400 Bad Request");

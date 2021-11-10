@@ -2,21 +2,8 @@
 include 'api/connect.php';
 $nrp = $_SESSION['nrp'];
 
-$sql = "SELECT * FROM panitia WHERE nrp = '" . $nrp . "' ";
+$sql = "SELECT * FROM openrec ";
 
-$query = mysqli_query($con, $sql);
-
-$data = mysqli_fetch_assoc($query);
-
-$div = $data['divisi'];
-
-//echo $div;
-
-if ($div != 'BPH') {
-    $sql = "SELECT * FROM openrec WHERE divisi1 = '" . $div . "' OR divisi2 = '" . $div . "'";
-} else {
-    $sql = "SELECT * FROM openrec ";
-}
 $query = mysqli_query($con, $sql);
 
 ?>
@@ -28,7 +15,7 @@ $query = mysqli_query($con, $sql);
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Dashboard ITEM2021</title>
+    <title>Dashboard LKMM-TM 2022</title>
     <!-- Bootstrap core CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="css/dashboard.css" rel="stylesheet">
@@ -98,7 +85,7 @@ $query = mysqli_query($con, $sql);
 
 <body data-new-gr-c-s-check-loaded="14.986.0" data-gr-ext-installed="">
     <header class="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0 shadow">
-        <p class="navbar-brand col-md-3 col-lg-2 me-0 px-3 mb-0" href="index.php">ITEM 2021
+        <p class="navbar-brand col-md-3 col-lg-2 me-0 px-3 mb-0" href="index.php">LKMM-TM 2022
         </p>
         <button class="navbar-toggler position-absolute d-md-none collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#sidebarMenu" aria-controls="sidebarMenu" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -191,9 +178,7 @@ $query = mysqli_query($con, $sql);
                     <table class="table table-striped table-sm">
                         <thead>
                             <tr>
-                                <th>Nama</th>
-                                <th>Divisi 1</th>
-                                <th>Divisi 2</th>
+                                <th>NRP</th>
                                 <th></th>
                             </tr>
                         </thead>
@@ -201,10 +186,8 @@ $query = mysqli_query($con, $sql);
                             <?php
                             while ($row = mysqli_fetch_assoc($query)) { ?>
                                 <tr>
-                                    <td><?php echo $row['nama'] ?></td>
-                                    <td><?php echo $row['divisi1'] ?></td>
-                                    <td><?php echo $row['divisi2'] ?></td>
-                                    <td><button class="btn btn-warning btn-sm m-0" value="<?php echo $row['nrp'] ?>" onclick="check()">Check</button></td>
+                                    <td><?php echo $row['nrp'] ?></td>
+                                    
                                 </tr>
                             <?php }
                             ?>

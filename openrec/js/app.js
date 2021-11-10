@@ -38,34 +38,14 @@ $(document).ready(function(){
                 $('.navbar').html('');
                 loadnavbar();
                 console.log(status['status']);
-                if(status['status'] == 0){//Belum isi
-                    $(".upload-file-page").remove();
-                    $(".interview-page").remove();
-                    
-                }
+
                 if(status['status'] == 1){
-                    console.log('Masuk 1')
-                    $(".regist-page").remove();
-                    $(".interview-page").remove();
-                    
-                }
-                if(status['status'] == 2){
-                    console.log('Masuk 2')
-                    $(".upload-file-page").remove();
-                    $(".regist-page").remove();
-                    
-                    
-                }
-                if(status['status'] == 3){
-		$(".upload-file-page").remove();
-                    $(".regist-page").remove();
-                    console.log('Masuk 3')
-                    var newData = "<h1 class='h1'>Terima kasih telah berpartisipasi!</h1><p class='p ml-2'>Jadwal Wawancarmu akan diadakan pada,<br>Hari/Tanggal: " + status['hari']+" <br>Waktu: "+status['jam']+"<br>Oleh: "+ status['alias']+" </p> <br><p class='p'>'Semangat! dan Persiapkan Dirimu Saat Interview!'</p>";
+                    var newData = "<h1 class='h1'>Terima kasih telah berpartisipasi!</h1><p class='p ml-2'>Jadwal Wawancaramu akan diadakan pada,<br>Hari/Tanggal: " + status['hari']+" <br>Waktu: "+status['jam']+"<br>Oleh: "+ status['alias']+" </p> <br><p class='p'>'Semangat! dan Persiapkan Dirimu Saat Interview!'</p>";
                     $(".status").html('');
                     $(".status").append(newData);
                     
-
                 }
+                
                 
             },error: function(status) {
             } 

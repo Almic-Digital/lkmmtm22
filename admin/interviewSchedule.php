@@ -14,9 +14,9 @@ $div = $data['divisi'];
 //echo $div;
 
 if ($div != 'BPH') {
-  $sql = "SELECT j.nrp_openrec as nrp, j.hari, j.jadwal, j.nrp_panit, o.nama as nama, o.id_line as idline FROM jadwal_openrec j JOIN openrec o ON j.nrp_openrec = o.nrp  WHERE j.nrp_panit =  '" . $nrp . "'";
+  $sql = "SELECT j.nrp_openrec as nrp, j.hari, j.jadwal, j.nrp_panit, o.nrp FROM jadwal_openrec j JOIN openrec o ON j.nrp_openrec = o.nrp  WHERE j.nrp_panit =  '" . $nrp . "'";
 } else {
-  $sql = "SELECT j.nrp_openrec as nrp, j.hari, j.jadwal, o.nama as nama, o.id_line as idline, o.nrp as nrp FROM jadwal_openrec j JOIN openrec o ON j.nrp_openrec = o.nrp";
+  $sql = "SELECT j.nrp_openrec as nrp, j.hari, j.jadwal, o.nrp FROM jadwal_openrec j JOIN openrec o ON j.nrp_openrec = o.nrp";
 }
 $query = mysqli_query($con, $sql);
 
@@ -99,7 +99,7 @@ $query = mysqli_query($con, $sql);
 
 <body data-new-gr-c-s-check-loaded="14.986.0" data-gr-ext-installed="">
     <header class="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0 shadow">
-        <p class="navbar-brand col-md-3 col-lg-2 me-0 px-3 mb-0" href="index.php">ITEM 2021
+        <p class="navbar-brand col-md-3 col-lg-2 me-0 px-3 mb-0" href="index.php">LKMM-TM 2022
         </p>
         <button class="navbar-toggler position-absolute d-md-none collapsed" type="button" data-bs-toggle="collapse"
             data-bs-target="#sidebarMenu" aria-controls="sidebarMenu" aria-expanded="false"
@@ -207,21 +207,19 @@ $query = mysqli_query($con, $sql);
                             <tr>
                                 <th>Hari</th>
                                 <th>Jadwal</th>
-                                <th>Nama</th>
-                                <th>ID Line</th>
+                                <th>NRP</th>
+                                
                                 <th></th>
                             </tr>
                         </thead>
                         <tbody>
                             <?php
-              while ($row = mysqli_fetch_assoc($query)) { ?>
+                    while ($row = mysqli_fetch_assoc($query)) { ?>
                             <tr>
                                 <td><?php echo $row['hari'] ?></td>
                                 <td><?php echo $row['jadwal'] ?></td>
-                                <td><?php echo $row['nama'] ?></td>
-                                <td><?php echo $row['idline'] ?></td>
-                                <td class="text-center"><button class="btn btn-warning btn-sm m-0 "
-                                        value="<?php echo $row['nrp'] ?>" onclick="check()">Check</button></td>
+                                <td><?php echo $row['nrp'] ?></td>
+                                 
                             </tr>
 
                             <?php }
