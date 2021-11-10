@@ -107,7 +107,7 @@
 					$temp="";
 					while($data = mysqli_fetch_assoc($query)){
 						$temp.=$data['nrp'];
-						if($user == strtolower($data['nrp'])){
+						if(strtolower($user) == strtolower($data['nrp'])){
 							$find = true;
 						}
 					}

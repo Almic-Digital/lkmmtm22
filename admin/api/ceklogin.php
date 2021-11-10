@@ -46,7 +46,7 @@
 			
 			$find = false;
 			while($data = mysqli_fetch_assoc($query)){
-				if($_SESSION['nrp'] == $data['nrp']){
+				if(strtolower($_SESSION['nrp']) == strtolower($data['nrp'])){
 					$find = true;
 				}
 			}
