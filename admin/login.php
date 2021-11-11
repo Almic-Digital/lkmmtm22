@@ -32,13 +32,14 @@ if (isset($_GET['stat'])) {
         }
     }
     </style>
-    <link rel="icon" href="asset/ITEM/icon-item.png">
+    <!-- <link rel="icon" href="asset/ITEM/icon-item.png"> -->
 </head>
 
 <body class="text-center" data-new-gr-c-s-check-loaded="14.986.0" data-gr-ext-installed="">
     <main class="form-signin">
         <form action="api/ceklogin.php" method="POST">
-            <img class="mb-4" src="asset/ITEM/item2.png" alt="Item-jaya2021" width="140">
+            <!-- <img class="mb-4" src="asset/ITEM/item2.png" alt="Item-jaya2021" width="140"> -->
+            <h2 class="h3 mb-3 fw-normal">LKMM-TM XXII</h2>
             <h1 class="h3 mb-3 fw-normal">Login Portal</h1>
             <label for="nrp" class="visually-hidden">Nrp</label>
             <input type="nrp" name="nrp" id="nrp" class="form-control" placeholder="Ex: c141901xxx" required="">

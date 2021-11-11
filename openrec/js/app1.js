@@ -1,19 +1,18 @@
 $(document).ready(function(){
     $("#submit-nrp").click(function(){
         var nrp = $("#nrp").val();
-
+        var pass = $("#pass").val();
         $.ajax({
             method: 'POST',
             url: "api/submitnrp.php",
-            data: {nrp: nrp},
+            data: {nrp: nrp, pass:pass},
             dataType: 'json',
             success: function( response ){
-                if(response['status']==0){
+                if(response['status']==1){
                     alert(response['error']);
                     window.location = response['redirect'];
                 }else{
                     alert(response['error']);
-                    window.location = response['redirect'];
                 }
             },error: function(e){
                 
