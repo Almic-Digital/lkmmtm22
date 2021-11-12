@@ -1,3 +1,3 @@
 <?php
-header("Location: http://bem.petra.ac.id/item2021/");
+header("Location: http://lkmm-tm.petra.ac.id");
 
