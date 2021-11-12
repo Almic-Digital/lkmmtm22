@@ -1,10 +1,25 @@
-$(window).on("load",function(){
+$(window).on("load", function () {
     $('.loading-wrapper').fadeOut("slow");
+    var button = document.getElementById("musicButton");
+    var icon = document.getElementById("iconMusic");
+    var audio = document.getElementById("myMusic");
+    button.addEventListener("click", function () {
+        if (audio.paused) {
+            icon.classList.remove('bi-play-circle-fill');
+            icon.classList.add('bi-pause-circle-fill');
+            audio.play();
+        } else {
+            icon.classList.remove('bi-pause-circle-fill');
+            icon.classList.add('bi-play-circle-fill');
+            audio.pause();
+        }
+    });
 });
 
-$(document).ready(function(){
-    function loadnavbar(){
-        var navbar =` <nav class="navbar navbar-expand-lg navbar-dark">
+$(document).ready(function () {
+    AOS.init();
+    function loadnavbar() {
+        var navbar = ` <nav class="navbar navbar-expand-lg navbar-dark">
         <a class="navbar-brand" href="#">
             <img src="asset/LOGO/ITEM/item1.png" alt="" loading="lazy">
         </a>
@@ -28,51 +43,51 @@ $(document).ready(function(){
             </ul>
         </div>
     </nav>`;
-    $('#header').prepend(navbar);
+        $('#header').prepend(navbar);
     }
-    function data_check(){
+    function data_check() {
         $.ajax({
             method: 'GET',
             url: '/lkmmtm22/openrec/api/check_status.php',
-            success: function(status){
+            success: function (status) {
                 $('.navbar').html('');
                 loadnavbar();
                 console.log(status['status']);
 
-                if(status['status'] == 1){
-                    var newData = "<h1 class='h1'>Terima kasih telah berpartisipasi!</h1><p class='p ml-2'>Jadwal Wawancaramu akan diadakan pada,<br>Hari/Tanggal: " + status['hari']+" <br>Waktu: "+status['jam']+"<br>Oleh: "+ status['alias']+" </p> <br><p class='p'>'Semangat! dan Persiapkan Dirimu Saat Interview!'</p>";
+                if (status['status'] == 1) {
+                    var newData = "<h1 class='h1'>Terima kasih telah berpartisipasi!</h1><p class='p ml-2'>Jadwal Wawancaramu akan diadakan pada,<br>Hari/Tanggal: " + status['hari'] + " <br>Waktu: " + status['jam'] + "<br>Oleh: " + status['alias'] + " </p> <br><p class='p'>'Semangat! dan Persiapkan Dirimu Saat Interview!'</p>";
                     $(".status").html('');
                     $(".status").append(newData);
-                    
+
                 }
-                
-                
-            },error: function(status) {
-            } 
+
+
+            }, error: function (status) {
+            }
         });
     }
 
 
-    function session_check(){
+    function session_check() {
         $.ajax({
             method: 'POST',
             url: '/lkmmtm22/openrec/api/response.php',
-            data: {x:'y'},
+            data: { x: 'y' },
             dataType: 'json',
-            success: function( response ){
+            success: function (response) {
                 console.log(response);
-                if(response == 'false'){
+                if (response == 'false') {
                     window.location = 'login.html';
                     console.log("403 Forbidden");
-                }else if(response == 'true'){
+                } else if (response == 'true') {
                     console.log("200 Success");
                     $('#no').hide();
                     $('.dash').show();
-                }else{
+                } else {
                     window.location = 'login.html';
                     console.log("Gagal masuk response = No");
-                } 
-            },error: function(e){
+                }
+            }, error: function (e) {
                 window.location = 'login.html';
                 console.log("not success");
             }
@@ -80,35 +95,35 @@ $(document).ready(function(){
     }
 
     //Function Load Data Wawancara
-    function load_interview(){
+    function load_interview() {
         $.ajax({
             method: 'GET',
             url: '/lkmmtm22/openrec/api/get_Data_wawancara.php',
-            success: function(data) {
-                
-                data.forEach(function(i){
+            success: function (data) {
+
+                data.forEach(function (i) {
                     console.log(i['id']);
-                    var option = "<option value='"+i['id']+"'>"+i['alias']+" / "+ i['hari']+" / "+i['jadwal']+"</option>";
-                    
+                    var option = "<option value='" + i['id'] + "'>" + i['alias'] + " / " + i['hari'] + " / " + i['jadwal'] + "</option>";
+
                     $("#jadwal").append(option);
                 });
-            },error: function(data) {
-                
-            } 
+            }, error: function (data) {
+
+            }
         });
     }
-    
-        
+
+
     //Function Submit on interview.html
-    $("#submit-interview").click(function(){ 
+    $("#submit-interview").click(function () {
         //Disable Button
         $("#submit-interview").attr('disabled', true);
-        function loadingButton(){
+        function loadingButton() {
             $("#submit-interview").append('<span id="spinner" class="spinner-grow spinner-grow-sm ml-3" role="status" aria-hidden="true"></span>');
-        };   
+        };
         var jadwal = $("#jadwal").val();
         console.log(jadwal);
-        if(jadwal != ' '){
+        if (jadwal != ' ') {
             $.ajax({
                 url: '/lkmmtm22/openrec/api/pilihwawancara.php',
                 method: 'POST',
@@ -116,25 +131,25 @@ $(document).ready(function(){
                 data: {
                     jadwal: jadwal
                 },
-                success: function(data) {
+                success: function (data) {
                     $("#spinner").remove();
                     console.log(data['status']);
-                    if(data['status'] == 0){
+                    if (data['status'] == 0) {
                         alert(data['error']);
-                    }else{
+                    } else {
                         data_check();
                     }
                 },
-                error: function($xhr, textStatus, errorThrown) {
+                error: function ($xhr, textStatus, errorThrown) {
                     $("#spinner").remove();
-                    
+
                 }
-            }); 
+            });
         }
     });
-    loadnavbar();
-    session_check();
-    data_check();
-    load_interview();
+    // loadnavbar();
+    // session_check();
+    // data_check();
+    // load_interview();
 });
 
