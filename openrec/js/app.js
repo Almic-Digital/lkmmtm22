@@ -45,6 +45,51 @@ $(document).ready(function () {
     </nav>`;
         $('#header').prepend(navbar);
     }
+
+    //Login Form
+    $("#login-button").click(function () {
+        var nrp = $("#nrp").val();
+        nrp = nrp.toLowerCase();
+        var password = $("#password").val();
+        var captcha = grecaptcha.getResponse();
+        console.log(nrp);
+        console.log(password);
+
+        function loadingButton() {
+            $("#login-button").append('<span id="spinner" class="spinner-grow spinner-grow-sm ml-3" role="status" aria-hidden="true"></span>');
+        };
+
+        $.ajax({
+            url: 'api/login.php',
+            method: 'POST',
+            beforeSend: loadingButton(),
+            data: {
+                nrp: nrp,
+                password: password,
+                recaptcha: captcha
+            },
+            success: function (data) {
+                $("#spinner").remove();
+                var response = JSON.parse(data);
+                if (response['status'] == 0) {
+                    alert(response['error']);
+                } else {
+                    alert(response['error']);
+                    window.location = response['redirect'];
+                    console.log(response['error'])
+                }
+
+            },
+            error: function ($xhr, textStatus, errorThrown) {
+                $("#spinner").remove();
+                alert($xhr.responseJSON['error']);
+            }
+        });
+    });
+
+
+
+
     function data_check() {
         $.ajax({
             method: 'GET',
