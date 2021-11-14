@@ -112,7 +112,7 @@
 						}
 					}
 					if($find){
-						$result['redirect'] = "home.html";
+						$result['redirect'] = "interview.html";
 						$result['status'] = 1;	
 						$result['error'] = "Success";
 						$_SESSION['nrp'] = $user;
