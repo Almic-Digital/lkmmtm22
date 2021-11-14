@@ -26,7 +26,7 @@ $data = mysqli_fetch_assoc($query);
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="css/dashboard.css" rel="stylesheet">
     <!-- Favicons -->
-    <link rel="icon" href="asset/LOGO/ITEM/icon-item.png">
+    <link rel="shortcut icon" href="asset/Logo/favicon.png" type="image/x-icon">
     <style>
     .bd-placeholder-img {
         font-size: 1.125rem;

@@ -17,6 +17,7 @@ if (isset($_GET['stat'])) {
     <!-- Bootstrap core CSS -->
     <link href="css/login.css" rel="stylesheet">
     <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link rel="shortcut icon" href="asset/Logo/favicon.png" type="image/x-icon">
     <style>
     .bd-placeholder-img {
         font-size: 1.125rem;

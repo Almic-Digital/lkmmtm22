@@ -46,24 +46,24 @@ $(document).ready(function () {
         $('#header').prepend(navbar);
     }
 
-    $("#submit-nrp").click(function(){
+    $("#submit-nrp").click(function () {
         var nrp = $("#nrp").val();
         var pass = $("#password").val();
         $.ajax({
             method: 'POST',
             url: "api/submitnrp.php",
-            data: {nrp: nrp, pass:pass},
+            data: { nrp: nrp, pass: pass },
             dataType: 'json',
-            success: function( response ){
+            success: function (response) {
                 console.log(response);
-                if(response['status']==1){
+                if (response['status'] == 1) {
                     alert(response['error']);
                     window.location = response['redirect'];
-                }else{
+                } else {
                     alert(response['error']);
                 }
-            },error: function(e){
-                
+            }, error: function (e) {
+
             }
         });
     });
@@ -122,7 +122,7 @@ $(document).ready(function () {
                 console.log(status['status']);
 
                 if (status['status'] == 1) {
-                    var newData = "<h1 class='h1'>Terima kasih telah berpartisipasi!</h1><p class='p ml-2'>Jadwal Wawancaramu akan diadakan pada,<br>Hari/Tanggal: " + status['hari'] + " <br>Waktu: " + status['jam'] + "<br>Oleh: " + status['alias'] + " </p> <br><p class='p'>'Semangat! dan Persiapkan Dirimu Saat Interview!'</p>";
+                    var newData = "<h1 class='h1-message'>Thank You for <br> Your Participation!</h1><p class='p-message ml-2'>Your Schedule will be held at :<br><br>Date: " + status['hari'] + " <br>Time: " + status['jam'] + "<br>Place: " + status['place'] + " </p> <br><br> <p class='p-message'> <b>Best Regards</b> <br> </p>" + status['alias'];
                     $(".card2").html('');
                     $(".card2").append(newData);
 
@@ -216,7 +216,7 @@ $(document).ready(function () {
     });
 
     var now = (window.location.pathname).split("/");
-    if(now.at(-1) == 'interview.html'){
+    if (now.at(-1) == 'interview.html') {
         session_check();
         data_check();
         load_interview();

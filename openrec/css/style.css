@@ -41,7 +41,16 @@ body{
       
     }
   }
-
+.h1-message{
+    font-weight: 600;
+    font-size: 28px;
+    color: black;
+}
+.p-message{
+    font-weight: 400;
+    font-size: 14px;
+    color: black;
+}
 .loading-wrapper{
     width: 100%;
     height: 100%;

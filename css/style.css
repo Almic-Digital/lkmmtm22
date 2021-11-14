@@ -11,22 +11,22 @@
 
 @keyframes shaker {
     10%, 90% {
-      transform: translate3d(0px, -2px, 0);
+        transform: translate3d(0px, -2px, 0);
     }
-    
+
     20%, 80% {
-      transform: rotate(-4deg);
+        transform: rotate(-4deg);
     }
-  
+
     30%, 50%, 70% {
-      transform: translate3d(0px, -4px, 0);
+        transform: translate3d(0px, -4px, 0);
     }
-  
+
     40%, 60% {
-      transform: rotate(4deg);
-      
+        transform: rotate(4deg);
+        
     }
-  }
+    }
 
 body{
     height: 100vh;
