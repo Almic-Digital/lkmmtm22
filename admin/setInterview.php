@@ -177,11 +177,11 @@ $nrp = $_SESSION['nrp'];
                                 <label for="hari">Date: </label>
                                 <select name="hari" id="hari" class="form-control">
                                     <option selected>Choose...</option>
-                                    <!-- <option value="Jumat 18 Desember 2021">Jumat 18 Desember 2021</option> -->
-                                    <option value="Jumat 17 Desember 2021">Jumat 17 Desember 2021</option>
-                                    <option value="Sabtu 18 Desember 2021">Sabtu 18 Desember 2021</option>
-                                    <option value="Senin 20 Desember 2021">Senin 20 Desember 2021</option>
-                                    <option value="Selasa 21 Desember 2021">Selasa 21 Desember 2021</option>
+                                    <!-- <option value="Friday 18 December 2021">Friday 18 December 2021</option> -->
+                                    <option value="Friday 17 December 2021">Friday 17 December 2021</option>
+                                    <option value="Saturday 18 December 2021">Saturday 18 December 2021</option>
+                                    <option value="Monday 20 December 2021">Monday 20 December 2021</option>
+                                    <option value="Tuesday 21 December 2021">Tuesday 21 December 2021</option>
                                 </select>
                             </div>
                             <div class="form-group col mb-3">

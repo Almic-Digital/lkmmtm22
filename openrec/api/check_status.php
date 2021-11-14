@@ -10,7 +10,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'GET') {
         "error" => "",
         "alias" => "",
         "hari"=>"",
-        "jam"=>""
+        "jam"=>"",
+        "place"=>""
     );
 
     $nrp = $_SESSION['nrp'];
@@ -35,11 +36,12 @@ if ($_SERVER['REQUEST_METHOD'] == 'GET') {
                 $data = mysqli_fetch_assoc($query);
 
                 $alias = $data['alias'];
+                $meet = $data['meet'];
 
                 $result['alias']=$alias;    
                 $result['hari']=$hari;
                 $result['jam']=$jadwal;
-                
+                $result['place']=$meet;
 
             }
 

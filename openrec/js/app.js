@@ -122,7 +122,7 @@ $(document).ready(function () {
                 console.log(status['status']);
 
                 if (status['status'] == 1) {
-                    var newData = "<h1 class='h1-message'>Thank You for <br> Your Participation!</h1><p class='p-message ml-2'>Your Schedule will be held at :<br><br>Date: " + status['hari'] + " <br>Time: " + status['jam'] + "<br>Place: " + status['place'] + " </p> <br><br> <p class='p-message'> <b>Best Regards</b> <br> </p>" + status['alias'];
+                    var newData = "<h1 class='h1-message'>Thank You for <br> Your Participation!</h1><p class='p-message ml-2'>Your Schedule will be held at : <br><br>Date: " + status['hari'] + " <br>Time: " + status['jam'] + "<br>Place: <a href=\"" + status['place'] + "\">"+status['place']+"</a> </p> <br><br> <p class='p-message'> <b>Best Regards,</b> <br>"+ status['alias']+"</p>" ;
                     $(".card2").html('');
                     $(".card2").append(newData);
 
