@@ -7,22 +7,8 @@
 *{
     padding: 0;
     margin: 0;
-
-}
-html,
-body {
-    height: 100%;
-    font-family: var(--primaryFont);
-    
 }
 
-body{
-    background: url("../asset/Background/pilar0.png");
-    width: 100%;
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: bottom;
-}
 @keyframes shaker {
     10%, 90% {
       transform: translate3d(0px, -2px, 0);
@@ -41,6 +27,21 @@ body{
       
     }
   }
+
+body{
+    height: 100vh;
+    font-family: var(--primaryFont);
+    background: url("../asset/Background/pilar0.png");
+    width: 100%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: bottom;
+}
+
+section{
+    height: 100%;
+    padding: 100px 0px;
+}
 
 .loading-wrapper{
     width: 100%;
@@ -65,30 +66,40 @@ body{
     animation-delay: 1s;
     transform: translate3d(0, 0, 0);
 }
-section{
-    padding: 80px 0px;
-}
 
-#login {
+#comingsoon {
     color: white;
     font-family: var(--primaryFont);
 }
-#login h2{
+#comingsoon h2{
     font-weight: 400;
 }
-#login h1{
+#comingsoon h1{
     font-weight: 600;
 }
-#login label{
+#comingsoon label{
     color: black;
     font-weight: 700;
     font-size: 25px;
 }
-#login .btn-red{
+#comingsoon .btn-red{
     background-color: #BD1D22;
     color: white;
     font-weight: 600;
     font-size: 20px;
+}
+.h1-comingsoon{
+    font-size: 2.5rem;
+}
+.timer{
+    color: white;
+    font-weight: bold;
+    font-size: 3rem;
+}
+.timer-h2{
+    color: white;
+    font-weight: bold;
+    font-size: 1rem;
 }
 .floatingLogo{
     position: absolute;
@@ -125,6 +136,9 @@ section{
     font-family: var(--font-playfair);
 }
 
+
+
+
 @media only screen and (max-width: 600px) {
     .mobile-block{
         display: block;
@@ -135,6 +149,9 @@ section{
     .bg-music{
         top: 10px;
     }
+    .h1-comingsoon{
+        font-size: 1.5rem;
+    }
 }
 @media only screen and (max-width: 430px) {
     .mobile-block{
@@ -144,6 +161,9 @@ section{
         display: none;
     }
     section{
-        padding: 50px 0px
+        padding: 100px 0px
+    }
+    .h1-comingsoon{
+        font-size: 1.5rem;
     }
 }
