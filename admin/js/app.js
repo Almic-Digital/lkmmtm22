@@ -37,20 +37,39 @@ function load_alias(){
                 var col2 = $("<td>" + panit['nama'] + "</td>");
                 var col3 = $("<td>" + panit['divisi'] + "</td>");                        
                 var col4 = $("<td>" + panit['alias'] + "</td>");
+                var col5 = $("<td>" + panit['meet']+"</td>");
 
                 col1.appendTo(row);
                 col2.appendTo(row);
                 col3.appendTo(row);
+                col5.appendTo(row);
                 col4.appendTo(row);
 
                 co++;
                 $("#aliastable").append(row);
             });
+            
         }
     })
 }
 
-function ganti(){
+function ganti_meet(){
+    var meet = $("#meet").val();
+
+    $.ajax({
+        url: "/lkmmtm22/admin/api/ganti_meet.php",
+        method: "POST",
+        data:{
+            meet:meet
+        },
+        success: function(data){
+            load_alias();
+            $("#meetku").html("<a href=\""+meet+"\">"+meet);
+        }
+    })
+}
+
+function ganti_alias(){
     var alias = $("#alias").val();
 
     $.ajax({
@@ -61,6 +80,7 @@ function ganti(){
         },
         success: function(data){
             load_alias();
+            $("#aliasku").html(alias);
         }
     })
 }

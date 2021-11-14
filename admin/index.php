@@ -197,15 +197,22 @@ $data = mysqli_fetch_assoc($query);
                     <div class="row">
                         <div class="col">
                             <p>Hello <?php echo $data['nama'] ?></p>
-                            <p>Aliasmu adalah <?php echo $data['alias'] ?></p>
+                            <p>Aliasmu adalah <span id="aliasku"><?php echo $data['alias'] ?></span></p>
                             <p>Saat ini, kamu ada <?php echo $data['status'] ?> wawancara</p>
+                            <p>Berikut link wawancaramu : <span id="meetku"><a href="<?php echo $data['meet'] ?>"> <?php echo $data['meet'] ?></span> </p>
 			    <p>Berikut Link untuk Pertanyaan Wawancara : <a href="https://petra.id/InterviewITEM2021">Link</a></p>
 			    
                         </div>
                         <div class="form-group col mb-3">
                             <label for="alias">Ganti Alias</label>
                             <input type="text" name="alias" id="alias" placeholder="Alias....">
-                            <button class="btn btn-success" onclick="ganti()">Ganti</button>
+                            <button class="btn btn-success" onclick="ganti_alias()">Ganti</button>
+                        </div>
+
+                        <div class="form-group col mb-3">
+                            <label for="meet">Ganti Link Meet</label>
+                            <input type="text" name="meet" id="meet" placeholder="Meet....">
+                            <button class="btn btn-success" onclick="ganti_meet()">Ganti</button>
                         </div>
                     </div>
                     <div class=row>
@@ -213,9 +220,10 @@ $data = mysqli_fetch_assoc($query);
                             <thead>
                                 <tr>
                                     <th scope="col">No.</th>
-                                    <th scope="col">Hari</th>
-                                    <th scope="col">Jam</th>
-                                    <th scope="col"></th>
+                                    <th scope="col">Nama</th>
+                                    <th scope="col">Divisi</th>
+                                    <th scope="col">Link Meet</th>
+                                    <th scope="col">Alias</th>
                                 </tr>
                             </thead>
                             <tbody id="aliastable">
