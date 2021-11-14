@@ -29,7 +29,7 @@ function load_alias(){
         method: "GET",
         success: function(data){
             var co = 1;
-            console.log(data);
+            
             $("#aliastable").html(' ');
             data.forEach(function(panit) {
                 var row = $("<tr scope='row'></tr>");

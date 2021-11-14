@@ -55,7 +55,7 @@ $(document).ready(function () {
             data: { nrp: nrp, pass: pass },
             dataType: 'json',
             success: function (response) {
-                console.log(response);
+                
                 if (response['status'] == 1) {
                     alert(response['error']);
                     window.location = response['redirect'];
@@ -74,8 +74,8 @@ $(document).ready(function () {
         nrp = nrp.toLowerCase();
         var password = $("#password").val();
         var captcha = grecaptcha.getResponse();
-        console.log(nrp);
-        console.log(password);
+        
+        
 
         function loadingButton() {
             $("#login-button").append('<span id="spinner" class="spinner-grow spinner-grow-sm ml-3" role="status" aria-hidden="true"></span>');
@@ -98,7 +98,7 @@ $(document).ready(function () {
                 } else {
                     alert(response['error']);
                     window.location = response['redirect'];
-                    console.log(response['error'])
+                    
                 }
 
             },
@@ -115,11 +115,11 @@ $(document).ready(function () {
     function data_check() {
         $.ajax({
             method: 'GET',
-            url: '/lkmmtm22/openrec/api/check_status.php',
+            url: 'api/check_status.php',
             success: function (status) {
                 $('.navbar').html('');
                 loadnavbar();
-                console.log(status['status']);
+                
 
                 if (status['status'] == 1) {
                     var newData = "<h1 class='h1-message'>Thank You for <br> Your Participation!</h1><p class='p-message ml-2'>Your Schedule will be held at : <br><br>Date: " + status['hari'] + " <br>Time: " + status['jam'] + "<br>Place: <a href=\"" + status['place'] + "\">"+status['place']+"</a> </p> <br><br> <p class='p-message'> <b>Best Regards,</b> <br>"+ status['alias']+"</p>" ;
@@ -138,25 +138,25 @@ $(document).ready(function () {
     function session_check() {
         $.ajax({
             method: 'POST',
-            url: '/lkmmtm22/openrec/api/response.php',
+            url: 'api/response.php',
             data: { x: 'y' },
             dataType: 'json',
             success: function (response) {
-                console.log(response);
+                
                 if (response == 'false') {
                     window.location = 'login.html';
-                    console.log("403 Forbidden");
+                    
                 } else if (response == 'true') {
-                    console.log("200 Success");
+                    
                     $('#no').hide();
                     $('.dash').show();
                 } else {
                     window.location = 'login.html';
-                    console.log("Gagal masuk response = No");
+                    
                 }
             }, error: function (e) {
                 window.location = 'login.html';
-                console.log("not success");
+                
             }
         });
     }
@@ -165,11 +165,11 @@ $(document).ready(function () {
     function load_interview() {
         $.ajax({
             method: 'GET',
-            url: '/lkmmtm22/openrec/api/get_Data_wawancara.php',
+            url: 'api/get_Data_wawancara.php',
             success: function (data) {
 
                 data.forEach(function (i) {
-                    console.log(i['id']);
+                    
                     var option = "<option value='" + i['id'] + "'>" + i['alias'] + " / " + i['hari'] + " / " + i['jadwal'] + "</option>";
 
                     $("#jadwal").append(option);
@@ -189,10 +189,10 @@ $(document).ready(function () {
             $("#submit-interview").append('<span id="spinner" class="spinner-grow spinner-grow-sm ml-3" role="status" aria-hidden="true"></span>');
         };
         var jadwal = $("#jadwal").val();
-        console.log(jadwal);
+        
         if (jadwal != ' ') {
             $.ajax({
-                url: '/lkmmtm22/openrec/api/pilihwawancara.php',
+                url: 'api/pilihwawancara.php',
                 method: 'POST',
                 beforeSend: loadingButton(),
                 data: {
@@ -200,7 +200,7 @@ $(document).ready(function () {
                 },
                 success: function (data) {
                     $("#spinner").remove();
-                    console.log(data['status']);
+                    
                     if (data['status'] == 0) {
                         alert(data['error']);
                     } else {
