@@ -50,29 +50,27 @@ $(document).ready(function () {
         var nrp = $("#nrp").val();
         var pass = $("#password").val();
 
-        alert(parseInt(nrp.substring(3,5)));
-        if(parseInt(nrp.substring(3,5)) > 20 ){
-            alert(parseInt(nrp.substring(3,5)));
+if(parseInt(nrp.substring(3,5)) > 20 ){
+            alert("Acara ini diselenggarakan untuk angkatan 2020 keatas");
         }else{
-            $.ajax({
-                method: 'POST',
-                url: "api/submitnrp.php",
-                data: { nrp: nrp, pass: pass },
-                dataType: 'json',
-                success: function (response) {
-                    
-                    if (response['status'] == 1) {
-                        alert(response['error']);
-                        window.location = response['redirect'];
-                    } else {
-                        alert(response['error']);
-                    }
-                }, error: function (e) {
-    
+$.ajax({
+            method: 'POST',
+            url: "api/submitnrp.php",
+            data: { nrp: nrp, pass: pass },
+            dataType: 'json',
+            success: function (response) {
+                
+                if (response['status'] == 1) {
+                    alert(response['error']);
+                    window.location = response['redirect'];
+                } else {
+                    alert(response['error']);
                 }
-            });
-        }
+            }, error: function (e) {
 
+            }
+        });
+}
         
     });
 
@@ -128,13 +126,14 @@ $(document).ready(function () {
                 $('.navbar').html('');
                 loadnavbar();
                 
+
                 if(status['inform']==0){
-                    var newData = "<p>Maaf, akses anda telah dibatasi ! Harap menghubungi Contact Person</p>" ;
+                    var newData = "<h1 class='h1-message'>Thank You for <br> Your Participation!</h1><p class='p-message ml-2'>Please contact our committe for your schedule <br>Download Form Surat Izin Orang Tua : <a href=\"https://petra.id/FormatSuratIzinLKMMTMXXXI\">Link Surat</a><br><br>*)Mohon form suat dapat dikumpulkan <a href=\"https://petra.id/PengumpulanSuratIzinLKMMTMXXXI\">disini</a> </p> <br><br> <p class='p-message'> <b>Best Regards,</b> <br>"+ status['alias']+"</p> " ;
                     $(".card2").html('');
                     $(".card2").append(newData);
                 }
                 else if (status['status'] == 1) {
-                    var newData = "<h1 class='h1-message'>Thank You for <br> Your Participation!</h1><p class='p-message ml-2'>Your Schedule will be held at : <br><br>Date: " + status['hari'] + " <br>Time: " + status['jam'] + "<br>Place: <a href=\"" + status['place'] + "\">"+status['place']+"</a> </p> <br><br> <p class='p-message'> <b>Best Regards,</b> <br>"+ status['alias']+"</p>" ;
+                    var newData = "<h1 class='h1-message'>Thank You for <br> Your Participation!</h1><p class='p-message ml-2'>Your Schedule will be held at : <br><br>Date: " + status['hari'] + " <br>Time: " + status['jam'] + "<br>Place: <a href=\"" + status['place'] + "\">"+status['place']+"</a><br>Download Form Surat Izin Orang Tua : <a href=\"https://petra.id/FormatSuratIzinLKMMTMXXXI\">Link Surat</a><br><br>*)Mohon form suat dapat dikumpulkan <a href=\"https://petra.id/PengumpulanSuratIzinLKMMTMXXXI\">disini</a> </p> <br><br> <p class='p-message'> <b>Best Regards,</b> <br>"+ status['alias']+"</p> " ;
                     $(".card2").html('');
                     $(".card2").append(newData);
 
@@ -232,6 +231,8 @@ $(document).ready(function () {
         session_check();
         data_check();
         load_interview();
+
+       
     }
 
     // loadnavbar();

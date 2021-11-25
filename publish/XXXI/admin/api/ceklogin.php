@@ -1,4 +1,5 @@
 <?php
+ob_start();
 	require 'connect.php';
 
 	if($_SERVER['REQUEST_METHOD'] == "POST")
@@ -8,30 +9,30 @@
 		$pass = $_POST['pass'];
 
 		// untuk publish
-		// $imap = false;
-		// $timeout = 30;
-		// $fp = fsockopen ($host='john.petra.ac.id',$port=110,$errno,$errstr,$timeout);
-		// $errstr = fgets ($fp); 
+		$imap = false;
+		$timeout = 30;
+		$fp = fsockopen ($host='john.petra.ac.id',$port=110,$errno,$errstr,$timeout);
+		$errstr = fgets ($fp); 
 
-		// if (substr ($errstr,0,1) == '+')
-		// { 
-		// 	fputs ($fp,"USER ".$user."\n");
-		// 	$errstr = fgets ($fp);
+		if (substr ($errstr,0,1) == '+')
+		{ 
+			fputs ($fp,"USER ".$user."\n");
+			$errstr = fgets ($fp);
 
-		// 	if (substr ($errstr,0,1) == '+')
-		// 	{
-		// 		fputs ($fp,"PASS ".$pass."\n");
-		// 		$errstr = fgets ($fp);
+			if (substr ($errstr,0,1) == '+')
+			{
+				fputs ($fp,"PASS ".$pass."\n");
+				$errstr = fgets ($fp);
 
-		// 		if (substr ($errstr,0,1) == '+')
-		// 		{
-		// 			$imap=true;
-		// 		}
-		// 	}
-		// }
+				if (substr ($errstr,0,1) == '+')
+				{
+					$imap=true;
+				}
+			}
+		}
 
 		//untuk local
-		$imap = true;
+		//$imap = true;
 	}
 
 	if($imap)
@@ -69,6 +70,7 @@
 
 	else
 	{
-		header("Location: ../login.php?stat=1"); 
+		header("Location: ../login.php?stat=1", TRUE); 
 	}
+ob_end_flush();
 ?>

@@ -30,6 +30,7 @@ function load_alias(){
         success: function(data){
             var co = 1;
             //data = JSON.parse(data);
+            console.log(data);
             $("#aliastable").html(' ');
             data.forEach(function(panit){
                 var row = $("<tr scope='row'></tr>");

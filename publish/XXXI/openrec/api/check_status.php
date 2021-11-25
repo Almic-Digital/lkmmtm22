@@ -1,4 +1,5 @@
 <?php 
+ob_start();
 include "connect.php";
 
 header("Content-Type: application/json");
@@ -28,9 +29,10 @@ if ($_SERVER['REQUEST_METHOD'] == 'GET') {
                 $data = mysqli_fetch_assoc($query);
 
                 $nrppanit = $data['nrp_panit'];
-                $status = $data['status'];
+
                 $hari  =$data['hari'];
                 $jadwal = $data['jadwal'];
+                $status = $data['status'];
 
                 $sql = "SELECT * FROM panitia WHERE nrp = '".$nrppanit."' ";
                 $query = mysqli_query($con,$sql);
@@ -61,5 +63,5 @@ if ($_SERVER['REQUEST_METHOD'] == 'GET') {
 
     echo json_encode($error);
 }
-
+ob_end_flush();
 ?> 
