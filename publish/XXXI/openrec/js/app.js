@@ -51,7 +51,8 @@ $(document).ready(function () {
         var pass = $("#password").val();
 
         if (parseInt(nrp.substring(3, 5)) > 20) {
-            alert("Acara ini diselenggarakan untuk angkatan 2020 keatas");
+            Swal.fire("Acara ini diselenggarakan untuk angkatan 2020 keatas")
+            //alert("Acara ini diselenggarakan untuk angkatan 2020 keatas");
         } else {
             $.ajax({
                 method: 'POST',
@@ -61,10 +62,11 @@ $(document).ready(function () {
                 success: function (response) {
 
                     if (response['status'] == 1) {
-                        alert(response['error']);
+                        //alert(response['error']);
+                        Swal.fire(response['error'])
                         window.location = response['redirect'];
                     } else {
-                        alert(response['error']);
+                        Swal.fire(response['error'])
                     }
                 }, error: function (e) {
 
@@ -100,9 +102,10 @@ $(document).ready(function () {
                 $("#spinner").remove();
                 var response = JSON.parse(data);
                 if (response['status'] == 0) {
-                    alert(response['error']);
+                    Swal.fire(response['error'])
+
                 } else {
-                    alert(response['error']);
+                    Swal.fire(response['error'])
                     window.location = response['redirect'];
 
                 }
@@ -233,7 +236,7 @@ $(document).ready(function () {
                     $("#spinner").remove();
 
                     if (data['status'] == 0) {
-                        alert(data['error']);
+                        Swal.fire(data['error'])
                     } else {
                         data_check();
                     }
