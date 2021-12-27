@@ -1,4 +1,4 @@
-function login(nrp, password){
+function login(){
     var nrp = $("#nrp").val();
     nrp = nrp.toUpperCase();
     var password = $("#password").val();
