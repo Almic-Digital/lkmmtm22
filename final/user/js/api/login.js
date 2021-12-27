@@ -16,7 +16,7 @@ function login(nrp, password){
                 alert(data['error']);
             } else {
                 alert(data['error']);
-                window.location = response['redirect'];
+                window.location = data['redirect'];
             }
 
         },
