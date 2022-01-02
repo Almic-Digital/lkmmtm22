@@ -1,13 +1,16 @@
 <?php
-include 'api/connect.php';
+include "api/connect.php";
+
 $nrp = $_SESSION['nrp'];
 
-$sql = "SELECT * FROM `peserta` ";
+$sql = "SELECT divisi FROM panitia WHERE nrp = '" . $nrp . "'";
 
 $query = mysqli_query($con, $sql);
 
-?>
+$data = mysqli_fetch_assoc($query);
 
+
+?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -106,7 +109,7 @@ $query = mysqli_query($con, $sql);
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="setInterview.php">
+                            <a class="nav-link active" href="setInterview.php">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-calendar">
                                     <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
                                     <line x1="16" y1="2" x2="16" y2="6"></line>
@@ -117,7 +120,7 @@ $query = mysqli_query($con, $sql);
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link active" href="dataNewComittee.php">
+                            <a class="nav-link" href="dataNewComittee.php">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file">
                                     <path d="M13 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"></path>
                                     <polyline points="13 2 13 9 20 9"></polyline>
@@ -157,6 +160,7 @@ $query = mysqli_query($con, $sql);
                         </div>
                     </div>
                     <hr>
+
                 </div>
             </nav>
 
@@ -170,43 +174,45 @@ $query = mysqli_query($con, $sql);
                     </div>
                 </div>
                 <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
-                    <h1 class="h2">Peserta</h1>
-                    <div class="btn-toolbar mb-2 mb-md-0">
+                    <h1 class="h2">Set Interview Schedule</h1>
+
+                </div>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-6">
+
+                            <label for="title">Judul</label>
+                            <input type="text" name="title" id="title" class="form-control">
+                            <br>
+                            <label for="desc">Deskripsi</label>
+                            <input type="text" name="desc" id="desc" class="form-control">
+                            <br>
+                            <div class="form-group">
+                                <label for="inputFile">File</label>
+                                <br>
+                                <input type="file" id="inputFile" accept="image/png, image/jpeg, .pdf">
+                            </div>
+
+                            <button type="submit" class="col btn btn-primary" onclick="addNews('<?php echo $data['divisi'] ?>')">Submit</button>
+                        </div>
+                        <div class="col-md-6"></div>
                     </div>
                 </div>
-                <div class="table-responsive">
-                    <table class="table table-striped table-sm">
-                        <thead>
-                            <tr>
-                                <th>NRP</th>
-                                <th>Nama</th>
-                                <th>LK Tujuan</th>
-                                <th>id Line</th>
-                                <th>Status</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <?php
-                            while ($row = mysqli_fetch_assoc($query)) { ?>
-                                <tr>
-                                    <td><?php echo $row['nrp'] ?></td>
-                                    <td><?php echo $row['nama'] ?></td>
-                                    <td><?php echo $row['lk_tujuan'] ?></td>
-                                    <td><?php echo $row['id_line'] ?></td>
-                                    <td><?php 
-                                        if($row['status'] == 1){
-                                            echo 'Offline';
-                                        }
-                                        else{
-                                            echo 'Online';
-                                        } 
-                                        ?></td>
-                                </tr>
-                            <?php }
-                            ?>
-                        </tbody>
-                    </table>
-                </div>
+                <hr>
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th scope="col">Waktu</th>
+                            <th scope="col">Divisi</th>
+                            <th scope="col">Judul</th>
+			                <th scope="col">Isi</th>
+                            <th scope="col">File</th>
+                        </tr>
+                    </thead>
+                    <tbody id="isiNews">
+                    </tbody>
+                </table>
+
             </main>
         </div>
     </div>
@@ -214,22 +220,10 @@ $query = mysqli_query($con, $sql);
 
     <script src="js/bootstrap.bundle.min.js.download"></script>
     <script src="js/feather.min.js.download"></script>
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous">
-    </script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous">
-    </script>
-
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="js/app.js"></script>
     <script>
-        function check() {
-            $(document).ready(function() {
-                $("button").click(function() {
-                    console.log(1);
-                    var a = $(this).val();
-                    var link = "detail.php?d=" + a;
-                    window.location.href = link;
-                });
-            });
-        }
+        
     </script>
 </body>
 
