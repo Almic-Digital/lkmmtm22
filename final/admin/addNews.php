@@ -202,6 +202,7 @@ $data = mysqli_fetch_assoc($query);
                 <table class="table">
                     <thead>
                         <tr>
+                            <th scope="col">No.</th>
                             <th scope="col">Waktu</th>
                             <th scope="col">Divisi</th>
                             <th scope="col">Judul</th>

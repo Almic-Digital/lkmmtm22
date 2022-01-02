@@ -140,7 +140,7 @@ function addNews(divisi){
 
                     success:function(data){
                         alert("success");
-                        
+                        load_news();
                         
                     },
                     error:function($xhr, textStatus, errorThrown) {
@@ -166,7 +166,7 @@ function addNews(divisi){
 
             success:function(data){
                 alert("success");
-                
+                load_news();
                 
             },
             error:function($xhr, textStatus, errorThrown) {
@@ -203,8 +203,8 @@ function load_news(){
                 col1.appendTo(row);
                 col2.appendTo(row);
                 col3.appendTo(row);
-                col5.appendTo(row);
                 col4.appendTo(row);
+                col5.appendTo(row);
                 col6.appendTo(row);
 
                 co++;
