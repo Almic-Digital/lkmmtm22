@@ -176,3 +176,41 @@ function addNews(divisi){
     }
     
 }
+
+function load_news(){
+    $.ajax({
+        url: "api/get_news.php",
+        method: "GET",
+        success: function(data){
+            var co = 1;
+            
+            $("#newstable").html(' ');
+            data.forEach(function(news){
+                var row = $("<tr scope='row'></tr>");
+                var col1 = $("<td>"+ co + "</td>");
+                var col2 = $("<td>" + news['time'] + "</td>");
+                var col3 = $("<td>" + news['divisi'] + "</td>");                        
+                var col4 = $("<td>" + news['judul'] + "</td>");
+                var col5 = $("<td>" + news['desc']+"</td>");
+                var col6;
+                if(news['file']=='-'){
+                    col6 = $("<td>-</td>");
+
+                }else{
+                    col6 = $("<td><a href='../" + news['file']+"'>file</td>");
+                }
+                
+                col1.appendTo(row);
+                col2.appendTo(row);
+                col3.appendTo(row);
+                col5.appendTo(row);
+                col4.appendTo(row);
+                col6.appendTo(row);
+
+                co++;
+                $("#newstable").append(row);
+            });
+            
+        }
+    })
+}

@@ -174,7 +174,7 @@ $data = mysqli_fetch_assoc($query);
                     </div>
                 </div>
                 <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
-                    <h1 class="h2">Set Interview Schedule</h1>
+                    <h1 class="h2">News</h1>
 
                 </div>
                 <div class="container">
@@ -209,7 +209,7 @@ $data = mysqli_fetch_assoc($query);
                             <th scope="col">File</th>
                         </tr>
                     </thead>
-                    <tbody id="isiNews">
+                    <tbody id="newstable">
                     </tbody>
                 </table>
 
@@ -222,9 +222,7 @@ $data = mysqli_fetch_assoc($query);
     <script src="js/feather.min.js.download"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="js/app.js"></script>
-    <script>
-        
-    </script>
+    <script>load_news()</script>
 </body>
 
 </html>
