@@ -177,6 +177,28 @@ function addNews(divisi){
     
 }
 
+function changeAbsen(){
+    var hari = $("#hari").val();
+    var waktu = $("#waktu").val();
+    var regis = $("#regis").val();
+    var status = $("#aktif").val();
+
+    $.ajax({
+        url: "api/changeAbsen.php",
+        method: 'POST',
+        data: {
+            hari:hari,
+            waktu:waktu,
+            regis:regis,
+            status:status
+        },
+        async: false,
+        success: function(data){
+            alert("Success");
+        }
+    })
+}
+
 function load_news(){
     $.ajax({
         url: "api/get_news.php",
