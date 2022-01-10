@@ -64,16 +64,30 @@
                                 $status = 1;
                             }
 
-                            $sql = "INSERT INTO `absensi_mahasiswa`(`nrp`, `hari`, `regis`, `waktu`, `status`) VALUES ('".$user."',".$hari.",".$regis.",NOW(), ".$status.")";
-						
-					        if($query = mysqli_query($con, $sql)){
+                            $sql = "SELECT * FROM `absensi_mahasiswa` WHERE nrp = '".$user."' AND hari=".$hari." AND regis = ".$regis;
+                            $query = mysqli_query($con, $sql);
+                            $row = mysqli_num_rows($query);
+
+                            if($row > 0){
                                 $result['redirect'] = "home.html";
                                 $result['status'] = 1;	
-                                $result['error'] = "Success";
-                            
-                            
+                                $result['error'] = "Already Absent";
                                 $_SESSION['nrp'] = $user;
+                            
+                            }else{
+                                $sql = "INSERT INTO `absensi_mahasiswa`(`nrp`, `hari`, `regis`, `waktu`, `status`) VALUES ('".$user."',".$hari.",".$regis.",NOW(), ".$status.")";
+						
+                                if($query = mysqli_query($con, $sql)){
+                                    $result['redirect'] = "home.html";
+                                    $result['status'] = 1;	
+                                    $result['error'] = "Success";
+                                
+                                
+                                    $_SESSION['nrp'] = $user;
+                                }
                             }
+
+                            
 
                             
                         }else{
