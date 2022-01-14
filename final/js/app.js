@@ -17,5 +17,7 @@ $(window).on("load", function () {
 });
 
 $(document).ready(function () {
-    AOS.init();
+    AOS.init({
+        duration: 1200,
+    });
 });
