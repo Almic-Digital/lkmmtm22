@@ -413,6 +413,96 @@ body{
   }
   
 
+.tmln h3{
+    text-align: center;
+    font-weight: bold;
+    font-family: var(--primaryFont);
+    margin-top: 10px;
+    margin-bottom: 30px;
+    color: black;
+}
+
+.tmln{
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 70px !important;
+    margin-bottom: 0% !important;
+    padding-top: 10px;
+    width: 90%;
+    border-radius: 10px;
+    color: rgb(75,75,75);
+}
+
+.tmln p{
+  font-family: var(--primaryFont);
+  font-weight: bold;
+  color: black;
+  margin-bottom: 0.5rem;
+}
+
+#colr{
+    background-color: #4093d7;
+}
+
+.timeline {
+  position: relative;
+  overflow-x: hidden;
+  margin: 0 auto;
+}
+
+.timeline::after {
+  content: '';
+  position: absolute;
+  width: 3px;
+  background-color: #4093d7;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  margin-left: -3px;
+  z-index: 1;
+}
+
+.timeline-kanan{
+    margin-left: 50%;
+}
+
+.timeline-content-kanan{
+    margin-left: 10%;
+    /* border-radius: 0px 20px 20px 20px; */
+    width: 60%;
+}
+
+.circle{
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background-color: #4093d7;
+  position : absolute;
+  display : flex;
+  justify-content: center;
+  align-items: center;
+  left : calc(50% - 11px);
+}
+
+.timeline-kiri{
+    margin-left: 10%;
+}
+
+.timeline-content-kiri{
+    /* border-radius: 20px 0px 20px 20px; */
+    width: 35%;
+}
+
+.card-header{
+    background-color: #F2AD3B !important;
+}
+
+.timeline h2{
+    color: white;
+    font-size: 1.5rem;
+    padding-top: 5px;
+}
+
 .card {
     background-color: transparent;
     width: 100%;
@@ -420,6 +510,7 @@ body{
     perspective: 1000px;
     cursor: pointer;
     margin-top: 20px;
+    border: none;
 }
 
 #borr{
@@ -744,6 +835,13 @@ section{
         overflow: hidden;
     }
 
+    .tmln h2{
+        font-size: 1.2rem;
+    }
+    .tmln p{
+        font-size: 1.2rem;
+    }
+
     li{
         list-style: circle;
     }
@@ -751,7 +849,6 @@ section{
     text{
         font-size: 55pt;
     }
-
 
 }
 
@@ -834,6 +931,30 @@ section{
 
     .card{
         overflow: hidden;
+    }
+
+    .tmln .card-header{
+        padding: 0px;
+        padding-left: 13px;
+    }
+    .tmln .card-body{
+        padding: 5px;
+        height: 200px;
+    }
+    .tmln h2{
+        font-size: 0.8rem;
+    }
+    .tmln p{
+        font-size: 0.5rem;
+        margin-bottom: 0.3rem;
+    }
+    .tmln .cardFooter{
+        font-size: 0.5rem;
+    }
+    .circle{
+      width: 10px;
+      height: 10px;
+      left : calc(50% - 7px);
     }
 
     li{
