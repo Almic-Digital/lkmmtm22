@@ -6,7 +6,7 @@ header("Content-Type: application/json");
 
 if ($_SERVER['REQUEST_METHOD'] == 'GET') {
 
-    $sql = "SELECT * FROM news";
+    $sql = "SELECT * FROM news ORDER BY time DESC";
     $query = mysqli_query($con,$sql);
 
     $result = array();

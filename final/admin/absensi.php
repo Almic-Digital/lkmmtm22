@@ -182,40 +182,7 @@ $data = mysqli_fetch_assoc($query);
                         <div class="col-md-6">
 
                             <label for="hari">Hari ke-</label>
-                            <select id="hari" name="hari">
-                                <?php    
-                                    $hari = $data['hari'];
-                                    if($hari == 1){
-                                        ?>
-                                <option value="1" selected>1</option>
-                                <option value="2">2</option>
-                                <option value="3">3</option>
-                                <option value="4">4</option>
-                                <?php
-                                    }else if($hari==2){
-                                        ?>
-                                        <option value="1">1</option>
-                                        <option value="2" selected>2</option>
-                                        <option value="3">3</option>
-                                        <option value="4">4</option>
-                                        <?php
-                                    }else if($hari==3){
-                                        ?>
-                                        <option value="1">1</option>
-                                        <option value="2">2</option>
-                                        <option value="3" selected>3</option>
-                                        <option value="4">4</option>
-                                        <?php
-                                    }else if($hari==4){
-                                        ?>
-                                <option value="1">1</option>
-                                <option value="2">2</option>
-                                <option value="3">3</option>
-                                <option value="4" selected>4</option>
-                                <?php
-                                    }
-                                ?>
-                            </select>
+                            <input type="date" name="hari" id="hari" value="<?php echo $data['hari'] ?>">
 
                             <br>
 

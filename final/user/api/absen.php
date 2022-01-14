@@ -60,11 +60,11 @@
                             $jam = $row['jam'];
                             $regis = $row['regis'];
                             $status=0;
-                            if(time() >= strtotime($jam)){
+                            if(time() >= strtotime($hari. " " .$jam)){
                                 $status = 1;
                             }
 
-                            $sql = "SELECT * FROM `absensi_mahasiswa` WHERE nrp = '".$user."' AND hari=".$hari." AND regis = ".$regis;
+                            $sql = "SELECT * FROM `absensi_mahasiswa` WHERE nrp = '".$user."' AND hari='".$hari."' AND regis = ".$regis;
                             $query = mysqli_query($con, $sql);
                             $row = mysqli_num_rows($query);
 
@@ -75,7 +75,7 @@
                                 $_SESSION['nrp'] = $user;
                             
                             }else{
-                                $sql = "INSERT INTO `absensi_mahasiswa`(`nrp`, `hari`, `regis`, `waktu`, `status`) VALUES ('".$user."',".$hari.",".$regis.",NOW(), ".$status.")";
+                                $sql = "INSERT INTO `absensi_mahasiswa`(`nrp`, `hari`, `regis`, `waktu`, `status`) VALUES ('".$user."','".$hari."',".$regis.",NOW(), ".$status.")";
 						
                                 if($query = mysqli_query($con, $sql)){
                                     $result['redirect'] = "home.html";

@@ -8,12 +8,13 @@ function get_alert_news(){
             
                 var alerted = '';
                 data.forEach(function(news){
+                    alerted += "<h3>"
                     alerted += news['divisi'];
-                    alerted += " ";
+                    alerted += "/";
                     alerted += news['judul'];
-                    alerted+= "\n";
+                    alerted+= "</h3>";
                 });
-                alert(alerted);
+                $("#modal-container").html(alerted);
             }
             
             

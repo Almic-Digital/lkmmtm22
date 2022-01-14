@@ -15,7 +15,7 @@ if($_SERVER['REQUEST_METHOD']=='POST'){
         'error'=>''
     );
 
-    $sql = "UPDATE `absensi` SET `hari`=".$hari.",`regis`=".$regis.",`jam`='".$waktu."',`status`=".$status." WHERE 1";
+    $sql = "UPDATE `absensi` SET `hari`='".$hari."',`regis`=".$regis.",`jam`='".$waktu."',`status`=".$status." WHERE 1";
     if($query = mysqli_query($con,$sql)){
 
     }else{
