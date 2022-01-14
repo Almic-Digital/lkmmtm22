@@ -34,7 +34,7 @@ function get_news(){
                 
 
                 if(file != '-'){
-                    file = $("<br><p>Link File : <a href'../"+file+"'>Link</a></p>");
+                    file = $("<br><p>Link File : <a href='../"+file+"'>Link</a></p>");
                     file.appendTo(body);
                 }
                 time.appendTo(body);
