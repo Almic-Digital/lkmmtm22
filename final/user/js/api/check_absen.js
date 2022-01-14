@@ -4,32 +4,47 @@ function check_absen(){
         method: "GET",
         success: function(data){
             if(data.length != 0){
-                $("#absenttable").html(' ');
+                $("#absentTable").html(' ');
                 data.forEach(function(absent){
                     var row = $("<tr scope='row'></tr>");
                     
                     var hari = absent['hari'];
-                    var regis = absent['regis'];
-                    var status = absent['status'];
-                    var waktu = absent['waktu'];
+                    var status_in = absent['status-in'];
+                    var waktu_in = absent['waktu-in'];
+                    var status_out = absent['status-out'];
+                    var waktu_out = absent['waktu-out'];
                     
-                    if(regis==1){
-                        regis="In";
+                    var col1 = $("<td>"+hari+"</td>");
+                    var col2 = $("<td>"+waktu_in+"</td>");
+                    var col3;
+                    var col4 = $("<td>"+waktu_out+"</td>");
+                    var col5;
+
+                    if(status_in == 0){
+                        col3 = $("<td><button class='btnt'>Done</button></td>")
+                    }else if(status_in == 1){
+                        col3 = $("<td><button class='btns'>Late</button></td>")
                     }else{
-                        regis="Out";
+                        col3 = $("<td><button class='btnl'>Empty</button></td>")
                     }
 
-                    if(status==1){
-                        status="Terlambat";
+                    if(status_out == 0){
+                        col5 = $("<td><button class='btnt'>Done</button></td>")
+                    }else if(status_out == 1){
+                        col5 = $("<td><button class='btns'>Late</button></td>")
                     }else{
-                        status="Tepat Waktu";
+                        col5 = $("<td><button class='btnl'>Empty</button></td>")
                     }
-    
-                    var isi = $("<p>Regis-"+regis+" Hari ke-"+hari+" "+waktu+" "+status+"</p>");
+
+                    col1.appendTo(row);
+                    col2.appendTo(row);
+                    col3.appendTo(row);
+                    col4.appendTo(row);
+                    col5.appendTo(row);
                     
-                    isi.appendTo(row);
                     
-                    $("#absenttable").append(row);
+                    
+                    $("#absentTable").append(row);
                 });
             }
             
