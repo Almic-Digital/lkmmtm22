@@ -199,6 +199,63 @@ function changeAbsen(){
     })
 }
 
+function load_absen(){
+    $.ajax({
+        url: "api/get_absen.php",
+        method: "GET",
+        success: function(data){
+            
+            $("#absentHeader").html(' ');
+            $("#absentTable").html('');
+            var row1 = $("<tr></tr>");
+            var row2 = $("<tr></tr>");
+            var col = $("<th scope='col' rowspan='2'>NRP</th>");
+            row1.append(col);
+            data['date'].forEach(function(date){
+                col = $("<th scope='col' colspan='2'>"+date['hari']+"</th>");
+                row1.append(col);
+
+                row2.append($("<th scope='col'>Regis-In</th>"));
+                row2.append($("<th scope='col'>Regis-Out</th>"));
+            });
+            $("#absentHeader").append(row1);
+            $("#absentHeader").append(row2);
+
+            var last_nrp = data['data'][0]['nrp'];
+            col = $("<td>"+last_nrp+"</td>");
+            var row = $("<tr scope='row'></tr>");
+            row.append(col);
+            data['data'].forEach(function(absent){
+                if(last_nrp != absent['nrp']){
+                    $("#absentTable").append(row);
+                    row = $("<tr scope='row'></tr>");
+                    last_nrp = absent['nrp'];
+                    col = $("<td>"+absent['nrp']+"</td>");
+                    row.append(col);
+   
+                }
+                if(absent['status-in'] == 0){
+                    col = $("<td class='bg-success'>v</td>");
+                }else if(absent['status-in']==1){
+                    col = $("<td class='bg-danger'>x</td>");
+                }else{
+                    col = $("<td>-</td>");
+                }
+                row.append(col);
+                if(absent['status-out'] == 0){
+                    col = $("<td class='bg-success'>v</td>");
+                }else if(absent['status-out']==1){
+                    col = $("<td class='bg-danger'>x</td>");
+                }else{
+                    col = $("<td>-</td>");
+                }
+                row.append(col);
+            });
+            $("#absentTable").append(row);
+        }
+    })
+}
+
 function load_news(){
     $.ajax({
         url: "api/get_news.php",
@@ -221,6 +278,7 @@ function load_news(){
                 }else{
                     col6 = $("<td><a href='../" + news['file']+"'>file</td>");
                 }
+                var col7 = $("<td><button type='button' class='btn btn-danger btn-sm m-0' onclick='delete_news("+news['id']+")'>Delete</button>");
                 
                 col1.appendTo(row);
                 col2.appendTo(row);
@@ -228,11 +286,26 @@ function load_news(){
                 col4.appendTo(row);
                 col5.appendTo(row);
                 col6.appendTo(row);
-
+                col7.appendTo(row);
                 co++;
                 $("#newstable").append(row);
             });
             
+        }
+    })
+}
+
+function delete_news(id){
+    $.ajax({
+        url: "api/delete_news.php",
+        method: 'POST',
+        data: {
+            id:id
+        },
+        async: false,
+        success: function(data){
+            alert("Success");
+            load_news();
         }
     })
 }
