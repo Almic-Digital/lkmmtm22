@@ -165,7 +165,7 @@ body{
     background: url("../../asset/Background/sea.png");
     width: 100%;
     background-size: cover;
-    background-repeat: no-repeat;
+    background-repeat: repeat;
     background-position: bottom;
 }
 
@@ -330,6 +330,7 @@ body{
 
 #mains{
     background-color: #2276bf;
+    /* opacity: 0.5; */
 }
 
 .editorial {
@@ -829,6 +830,11 @@ body{
         color: white;
     }
 
+    .navbtn2{
+        background-color: #F2AD3B;
+        color: black;
+    }
+
     #navs{
         width: 100%;
         margin-top: 1rem;
@@ -906,10 +912,6 @@ body{
       left : calc(50% - 7px);
     }
 
-    li{
-        list-style: circle;
-    }
-
     text{
         font-size: 55pt;
     }
@@ -930,6 +932,11 @@ body{
         text-decoration: none;
         width: 100%;
         font-family: var(--primaryFont);
+    }
+
+    .navbtn2{
+        background-color: #F2AD3B;
+        color: black;
     }
 
 }

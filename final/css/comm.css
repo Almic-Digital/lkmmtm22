@@ -656,10 +656,6 @@ a{
         overflow-x: hidden;
     }
 
-    li{
-        list-style: circle;
-    }
-
     text{
         font-size: 55pt;
     }
@@ -678,6 +674,11 @@ a{
         display: block;
         text-decoration: none;
         width: 100%;
+    }
+
+    .navbtn2{
+        background-color: #F2AD3B;
+        color: black;
     }
 
 }
@@ -703,10 +704,6 @@ a{
         overflow: hidden;
     }
 
-    li{
-        list-style: circle;
-    }
-
     text{
         font-size: 55pt;
     }
@@ -727,4 +724,8 @@ a{
         width: 100%;
     }
 
+    .navbtn2{
+        background-color: #F2AD3B;
+        color: black;
+    }
 }
