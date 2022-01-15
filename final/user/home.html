@@ -12,7 +12,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
     <link rel="shortcut icon" href="../asset/Logo/favicon.png" type="image/x-icon">
 </head>
-<body>
+<body id="mains">
     <div class="loading-wrapper">
         <div class="container">
             <div class="col-md-4"></div>
@@ -39,34 +39,49 @@
         </div>
 
 
-        <div class="wave wave1"></div>
-        <div class="wave wave2"></div>
-        <div class="wave wave3"></div>
-        <div class="wave wave4"></div>
+        <div class="wavef wave1"></div>
+        <div class="wavef wave2"></div>
+        <div class="wavef wave3"></div>
+        <div class="wavef wave4"></div>
         
     </div>
+
+    <nav class="navbar navbar-expand-xl navbar-light" style="padding-top: 0;">
+        <div class="card1">
+          <div class="card2">
+  
+            <a class="navbar-brand" href="#">
+              <img src="../asset/Logo/favicon.png" width="auto" height="35" class="d-inline-block align-top" alt="">
+              <span style="vertical-align: middle;">LKMM-TM XXXI</span>
+           </a>
+           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+           </button>
+           <div class="collapse navbar-collapse" id="navbarSupportedContent" style="float: right;">
+              <ul class="navbar-nav" id="navs">
+                <li class="nav-item">
+                  <a href="home.html" class="navbtn" id="nav-link" style="text-decoration: none;">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a href="news.html" class="navbtn" id="nav-link" style="text-decoration: none;">News</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#footer" class="navbtn" id="nav-link" style="text-decoration: none;">Contact Us</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="navbtn2" id="nav-link" style="text-decoration: none;">Logout</a>
+                </li>
+              </ul>
+            </div>
+  
+          </div>
+        </div>
+        
+      </nav>
 
     <section>
         <header>
             <div class="navbar">
-
-                <ul class="nav-menu">
-                    <li class="nav-item">
-                        <a href="news.html" class="navbtn" style="text-decoration: none;">Pengumuman</a>
-                
-                    </li>
-
-                    <li class="nav-item">
-                        <button class="navbtn" onclick="logout()" style="font-family: Montserrat, sans-serif;">Logout</button>
-                    </li>
-
-                </ul>
-
-                <div class="hamburger">
-                    <span class="bar"></span>
-                    <span class="bar"></span>
-                    <span class="bar"></span>
-                </div>
 
                 <!-- <a href="news.html" class="navbtn" style="text-decoration: none;">Pengumuman</a>
                 <button class="navbtn" onclick="logout()" style="font-family: Montserrat, sans-serif;">Logout</button> -->
@@ -82,7 +97,7 @@
                 </text>
             </svg>
 
-            <a class="navbtn2" id="closed" href="#mains" style="text-decoration: none;">Learn More</a>
+            <!-- <a class="navbtn2" id="closed" href="#mains" style="text-decoration: none;">Learn More</a> -->
             
             <div class="wave wave1"></div>
             <div class="wave wave2"></div>
@@ -167,18 +182,19 @@
             </g>
         </svg> -->
 
+        <br>
         
         <div class="container">
             <div class="row justify-content-center">
 				<div class="col-md-6 text-center mb-5">
-					<h2 class="heading-section">Absensi</h2>
+					<h2 class="heading-section" style="color: white;">Absensi</h2>
 				</div>
 			</div>
 			<div class="row">
 				<div class="col-md-12">
 					<div class="table-wrap" id="isiTable">
 						<table class="table table-striped">
-						  <thead>
+						  <thead id="thead-color">
 						    <tr>
 						      <th>Tanggal</th>
 						      <th>Waktu Regist-in</th>
