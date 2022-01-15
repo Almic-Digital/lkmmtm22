@@ -16,6 +16,10 @@ body {
     
 }
 
+#mains{
+    background-color: #2276bf;
+}
+
 p, h1, h2, h3, h4, h5, a, button, th, td{
     font-family: var(--primaryFont);
 }
@@ -35,30 +39,18 @@ header{
 
 .navbar {
     display: flex;
-    justify-content: space-between;
+    /* justify-content: space-between; */
     align-items: center;
-    padding: 1rem 1.5rem;
+    /* padding: 1rem 1.5rem; */
+    width: 100%;
     float: right;
-}
-
-.hamburger {
-    display: none;
-}
-
-.bar {
-    display: block;
-    width: 25px;
-    height: 3px;
-    margin: 5px auto;
-    -webkit-transition: all 0.3s ease-in-out;
-    transition: all 0.3s ease-in-out;
-    background-color: #f7f7f7;
 }
 
 .nav-menu {
     display: flex;
-    justify-content: space-between;
-    align-items: center;
+    /* justify-content: space-between;
+    align-items: center; */
+    float: right;
 }
 
 .nav-item {
@@ -69,7 +61,7 @@ header{
     border: 1px solid transparent;
     padding: 10px  20px;
     background-color: transparent;
-    color: white;
+    color: black;
     transition: 0.6s;
     border-radius: 12px;
     border: none;
@@ -98,8 +90,8 @@ header{
 }
 
 .btns{
-    background-color: #F2AD3B;
-    color: black;
+    background-color: #BD1D22;
+    color: white;
     border: 1px solid transparent;
     padding: 10px  20px;
     transition: 0.6s;
@@ -150,10 +142,18 @@ h2{
     text-align: center;
 }
 
-.navbtn2{
-    border: 1px solid #F2AD3B;
-    padding: 10px  20px;
+#thead-color{
     background-color: #F2AD3B;
+}
+
+#absentTable{
+    background-color: #F2AD3B;
+}
+
+.navbtn2{
+    border: 1px solid transparent;
+    padding: 10px  20px;
+    background-color: #BD1D22;
     color: white;
     transition: 0.6s;
     border-radius: 12px;
@@ -173,7 +173,7 @@ h2{
 
 
 body{
-    background: url("../../../asset/Background/pilar0.png");
+    background: url("../../asset/Background/pilar1.png");
     width: 100%;
     background-size: cover;
     background-repeat: no-repeat;
@@ -523,11 +523,13 @@ section{
     padding: 15px;
     background-color: #F2AD3B;
     border:4px solid black;
+    width: 100%;
 }
 .card2{
     padding: 30px;
     background-color: white;
     border:4px solid black;
+    width: 100%;
 }
 .mobile-block{
     display: none;
@@ -711,9 +713,6 @@ section{
         transform: translateY(-8px) rotate(-45deg);
     }
 
-    li{
-        list-style: circle;
-    }
 
     text{
         font-size: 55pt;
@@ -732,6 +731,17 @@ section{
         overflow: scroll;
     }
     
+    #navs{
+        margin-top: 1rem;
+        display: block;
+        text-decoration: none;
+        width: 100%;
+        font-family: var(--primaryFont);
+    }
+    .navbtn2{
+        background-color: #F2AD3B;
+        color: black;
+    }
 }
 
 @media only screen and (max-width: 430px) {
@@ -800,10 +810,6 @@ section{
         transform: translateY(-8px) rotate(-45deg);
     }
 
-    li{
-        list-style: circle;
-    }
-
     text{
         font-size: 55pt;
     }
@@ -819,5 +825,17 @@ section{
 
     #over{
         overflow: scroll;
+    }
+
+    #navs{
+        margin-top: 1rem;
+        display: block;
+        text-decoration: none;
+        width: 100%;
+        font-family: var(--primaryFont);
+    }
+    .navbtn2{
+        background-color: #F2AD3B;
+        color: black;
     }
 }

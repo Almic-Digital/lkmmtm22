@@ -13,6 +13,7 @@ html,
 body {
     height: 100%;
     font-family: var(--primaryFont);
+    scroll-behavior: smooth;
     
 }
 
@@ -37,7 +38,7 @@ li{
 
 .navbar {
     display: flex;
-    justify-content: space-between;
+    /* justify-content: space-between; */
     align-items: center;
     /* padding: 1rem 1.5rem; */
     width: 100%;
@@ -72,8 +73,8 @@ li{
 .navbtn{
     border: 1px solid transparent;
     padding: 10px  20px;
-    background-color: #F2AD3B;
-    color: white;
+    background-color: transparent;
+    color: black;
     transition: 0.6s;
     border-radius: 12px;
     border: none;
@@ -81,7 +82,7 @@ li{
 }
 
 .navbtn:hover {
-    background-color:#4093d7;
+    background-color:#F2AD3B;
     color: white;
     transition: 0.6s;
 }
@@ -177,7 +178,7 @@ h2{
 
 
 body{
-    background: url("../../asset/Background/sea.png");
+    background: url("../asset/Background/sea.png");
     width: 100%;
     background-size: cover;
     background-repeat: no-repeat;
@@ -305,7 +306,7 @@ a{
     left: 0;
     width: 100%;
     height: 70px;
-    background: url("../../asset/ilustration/wave.png") ;
+    background: url("../asset/ilustration/waveputih.png") ;
     background-size: 1000px 100px;
 }
 
@@ -632,29 +633,10 @@ a{
   }
 
 @media only screen and (max-width: 600px) {
-    .nav-menu {
-        z-index: 9999;
-        position: fixed;
-        left: -100%;
-        top: 5rem;
-        flex-direction: column;
-        background-color: #F2AD3B;
-        width: 100%;
-        border-radius: 10px;
-        text-align: center;
-        transition: 0.3s;
-        box-shadow: 0 10px 27px rgba(0, 0, 0, 0.05);
-    }
-
-    .nav-menu.active {
-        left: 0;
-        overflow-x: hidden;
-    }
-
     .nav-item {
-        margin: 2.5rem 0;
+        margin-top: 1rem;
+        float: left;
     }
-
 
     .mobile-block{
         display: block;
@@ -670,34 +652,8 @@ a{
         display: none;
     }
 
-    .hamburger {
-        display: block;
-        cursor: pointer;
-
-    }
-
-    .hamburger.active .bar:nth-child(2) {
-        opacity: 0;
-    }
-
-    .hamburger.active .bar:nth-child(1) {
-        transform: translateY(8px) rotate(45deg);
-    }
-
-    .hamburger.active .bar:nth-child(3) {
-        transform: translateY(-8px) rotate(-45deg);
-    }
-
-    #mains{
-        margin-top: 10%;
-    }
-
     .editorial{
         overflow-x: hidden;
-    }
-
-    li{
-        list-style: circle;
     }
 
     text{
@@ -713,32 +669,24 @@ a{
     .card-body{
         padding: 0.5rem 0.5rem;
     }
+    #navs{
+        margin-top: 1rem;
+        display: block;
+        text-decoration: none;
+        width: 100%;
+    }
+
+    .navbtn2{
+        background-color: #F2AD3B;
+        color: black;
+    }
 
 }
 
 @media only screen and (max-width: 430px) {
-    .nav-menu {
-        z-index: 9999;
-        position: fixed;
-        left: -100%;
-        top: 5rem;
-        flex-direction: column;
-        background-color: #F2AD3B;
-        width: 100%;
-        border-radius: 10px;
-        text-align: center;
-        transition: 0.3s;
-        box-shadow:
-            0 10px 27px rgba(0, 0, 0, 0.05);
-    }
-
-    .nav-menu.active {
-        overflow-x: hidden;
-        left: 0;
-    }
-
     .nav-item {
-        margin: 2.5rem 0;
+        margin-top: 1rem;
+        float: left;
     }
 
     .mobile-block{
@@ -752,34 +700,8 @@ a{
         display: none;
     }
 
-    .hamburger {
-        display: block;
-        cursor: pointer;
-
-    }
-
-    .hamburger.active .bar:nth-child(2) {
-        opacity: 0;
-    }
-
-    .hamburger.active .bar:nth-child(1) {
-        transform: translateY(8px) rotate(45deg);
-    }
-
-    .hamburger.active .bar:nth-child(3) {
-        transform: translateY(-8px) rotate(-45deg);
-    }
-
-    #mains{
-        margin-top: 10%;
-    }
-
     .editorial{
         overflow: hidden;
-    }
-
-    li{
-        list-style: circle;
     }
 
     text{
@@ -795,5 +717,15 @@ a{
     .card-body{
         padding: 0.5rem 0.5rem;
     }
+    #navs{
+        margin-top: 1rem;
+        display: block;
+        text-decoration: none;
+        width: 100%;
+    }
 
+    .navbtn2{
+        background-color: #F2AD3B;
+        color: black;
+    }
 }
