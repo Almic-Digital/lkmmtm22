@@ -632,6 +632,10 @@ a{
       color: #fff;
   }
 
+  #navbarSupportedContent{
+    float: right;
+}
+
 @media only screen and (max-width: 600px) {
     .nav-item {
         margin: 2.5rem 0;
@@ -681,8 +685,12 @@ a{
         color: white;
     }
 
+    .navbar-toggler{
+        float: right;
+    }
+
     #navbarSupportedContent{
-        float: inline-start;
+        float: none;
     }
 
 }
@@ -733,7 +741,11 @@ a{
         color: white;
     }
     
+    .navbar-toggler{
+        float: right;
+    }
+
     #navbarSupportedContent{
-        float: initial;
+        float: none;
     }
 }

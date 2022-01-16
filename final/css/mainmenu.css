@@ -766,6 +766,10 @@ body{
       color: #fff;
   }
 
+  #navbarSupportedContent{
+    float: right;
+}
+
 @media only screen and (max-width: 600px) {
     .nav-item {
         margin: 2.5rem 0;
@@ -839,6 +843,14 @@ body{
         display: block;
         text-decoration: none;
         font-family: var(--primaryFont);
+    }
+
+    .navbar-toggler{
+        float: right;
+    }
+
+    #navbarSupportedContent{
+        float: none;
     }
 
 }
@@ -936,4 +948,11 @@ body{
         color: white;
     }
 
+    .navbar-toggler{
+        float: right;
+    }
+
+    #navbarSupportedContent{
+        float: none;
+    }
 }

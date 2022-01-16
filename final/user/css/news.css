@@ -583,6 +583,10 @@ section{
       color: #fff;
   }
 
+  #navbarSupportedContent{
+    float: right;
+}
+
 @media only screen and (max-width: 600px) {
     .mobile-block{
         display: block;
@@ -624,6 +628,14 @@ section{
     #isiNews{
         font-size: medium;
         overflow: scroll;
+    }
+
+    .navbar-toggler{
+        float: right;
+    }
+
+    #navbarSupportedContent{
+        float: none;
     }
     
     .card{
@@ -691,6 +703,13 @@ section{
         overflow: scroll;
     }
 
+    .navbar-toggler{
+        float: right;
+    }
+
+    #navbarSupportedContent{
+        float: none;
+    }
     
     #navs{
         /* margin-top: 1rem; */

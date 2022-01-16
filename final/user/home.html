@@ -130,25 +130,67 @@
           </div>
     </section>
 
+    <section id="confirm_modal">
+      <div class="modal" id="confirmModal" tabindex="-1">
+          <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title">Konfirmasi</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+              <div class="modal-body">
+                <div id="modal-container">
+                    <h4>Apakah anda yakin ingin mengikuti kegiatan secara Online?</h4>
+                    <small>Anda tidak dapat mengganti pilihan anda.</small>
+                </div>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="navbtn2" style="background-color: #2276bf;" data-bs-dismiss="modal">Confirm</button>
+                <button type="button" class="navbtn2" data-bs-dismiss="modal">Cancel</button>
+              </div>
+            </div>
+          </div>
+        </div>
+    </section>
+
 
     <section id="mains">
         <div class="container">
             <div class="row">
                 <div class="col-md-2"></div>
                 <div class="col-md-8">
-                    <div class="card" id="idcard">
-                        <div class="card-body align-items-center justify-content-center">
-                            Nama        : <span id="nama"> Dummy </span><br>
-                            Jurusan     : <span id="jurusan"> Dummy </span><br>
-                            LK Asal     : <span id="lk_asal"> Dummy </span><br>
-                            LK Tujuan   : <span id="lk_tujuan"> Dummy </span><br>
-                            Status      : <span id="status"> Dummy </span><br>
-
+                    <div class="card3 text-center">
+                        <div style="border: none;">
+                          Data diri
                         </div>
+                      <div class="card4 text-center">
+                        <div class="text-center" id="idcard">
+                            
+                            <div style="background-color: #fff;">
+                                  Nama        : <span id="nama"> Dummy </span><br>
+                                  Jurusan     : <span id="jurusan"> Dummy </span><br>
+                                  LK Asal     : <span id="lk_asal"> Dummy </span><br>
+                                  LK Tujuan   : <span id="lk_tujuan"> Dummy </span><br>
+                                  Status      : <span id="status"> Dummy </span><br>
+                            </div>
+                            
+                          </div>
+                          
+                        </div>
+
+                        <div style="border: none;">
+                          <p>Apakah anda ingin mengikuti kegiatan secara online?</p>
+                          <button type="button" class="navbtn2" data-bs-toggle="modal" data-bs-target="#confirmModal">
+                            Ganti
+                          </button>
+                        </div>
+                      </div>
                     </div>
+
                     
+                <div class="col-md-2">
+                  
                 </div>
-                <div class="col-md-2"></div>
             </div>
             
             
