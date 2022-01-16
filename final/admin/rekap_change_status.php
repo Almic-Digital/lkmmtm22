@@ -3,12 +3,9 @@ include "api/connect.php";
 
 $nrp = $_SESSION['nrp'];
 
-$sql = "SELECT divisi FROM panitia WHERE nrp = '" . $nrp . "'";
+$sql = "SELECT `peserta`.`nrp` as nrp, `rekap_change_status`.`waktu` as waktu, `peserta`.`nama` as nama  FROM `rekap_change_status` JOIN `peserta` ON `rekap_change_status`.`nrp` = `peserta`.`nrp`";
 
 $query = mysqli_query($con, $sql);
-
-$data = mysqli_fetch_assoc($query);
-
 
 ?>
 
@@ -129,7 +126,7 @@ $data = mysqli_fetch_assoc($query);
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link  active" href="addNews.php">
+                            <a class="nav-link" href="addNews.php">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-users">
                                     <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
                                     <circle cx="9" cy="7" r="4"></circle>
@@ -140,7 +137,7 @@ $data = mysqli_fetch_assoc($query);
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="rekap_change_status.php">
+                            <a class="nav-link  active" href="rekap_change_status.php">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-users">
                                     <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
                                     <circle cx="9" cy="7" r="4"></circle>
@@ -185,43 +182,33 @@ $data = mysqli_fetch_assoc($query);
                     </div>
                 </div>
                 <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
-                    <h1 class="h2">News</h1>
+                    <h1 class="h2">Rekap Change Status</h1>
 
                 </div>
-                <div class="container">
-                    <div class="row">
-                        <div class="col-md-6">
-
-                            <label for="title">Judul</label>
-                            <input type="text" name="title" id="title" class="form-control">
-                            <br>
-                            <label for="desc">Deskripsi</label>
-                            <input type="text" name="desc" id="desc" class="form-control">
-                            <br>
-                            <div class="form-group">
-                                <label for="inputFile">File</label>
-                                <br>
-                                <input type="file" id="inputFile" accept="image/png, image/jpeg, .pdf">
-                            </div>
-
-                            <button type="submit" class="col btn btn-primary" onclick="addNews('<?php echo $data['divisi'] ?>')">Submit</button>
-                        </div>
-                        <div class="col-md-6"></div>
-                    </div>
-                </div>
-                <hr>
+                
+                
                 <table class="table">
                     <thead>
                         <tr>
                             <th scope="col">No.</th>
                             <th scope="col">Waktu</th>
-                            <th scope="col">Divisi</th>
-                            <th scope="col">Judul</th>
-			                <th scope="col">Isi</th>
-                            <th scope="col">File</th>
+                            <th scope="col">NRP</th>
+                            <th scope="col">Nama</th>
                         </tr>
                     </thead>
-                    <tbody id="newstable">
+                    <tbody>
+                        <?php
+                        $i = 1;
+                        while ($row = mysqli_fetch_assoc($query)) { ?>
+                            <tr>
+                                <td scope="col"><?php echo $i++; ?></td>
+                                <td scope="col"><?php echo $row['waktu']; ?></td>
+                                <td scope="col"><?php echo $row['nrp']; ?></td>
+                                <td scope="col"><?php echo $row['nama']; ?></td>
+                            </tr>
+
+                        <?php }
+                        ?>
                     </tbody>
                 </table>
 
@@ -234,7 +221,7 @@ $data = mysqli_fetch_assoc($query);
     <script src="js/feather.min.js.download"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="js/app.js"></script>
-    <script>load_news()</script>
+    
 </body>
 
 </html>
