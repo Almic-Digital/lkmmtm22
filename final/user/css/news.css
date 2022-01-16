@@ -422,9 +422,13 @@ body{
     color: black;
     font-family: var(--primaryFont);
     border-radius: 5px;
+    width: 100%;
+    text-align: left;
 }
 
-
+.row.g-0{
+    width: 100%;
+}
 
 section{
     padding: 30px 0px;
@@ -587,6 +591,11 @@ section{
     float: right;
 }
 
+#isiNews{
+    width: 100%;
+    text-align: left;
+}
+
 @media only screen and (max-width: 600px) {
     .mobile-block{
         display: block;
@@ -621,13 +630,11 @@ section{
         font-size: 55pt;
     }
 
-    .card-body{
-        overflow: scroll;
-    }
+    
 
     #isiNews{
         font-size: medium;
-        overflow: scroll;
+        /* overflow: scroll; */
     }
 
     .navbar-toggler{
@@ -639,7 +646,7 @@ section{
     }
     
     .card{
-        overflow: scroll;
+        /* overflow: scroll; */
     }
     
     #navs{
@@ -690,17 +697,14 @@ section{
         font-size: 55pt;
     }
 
-    .card-body{
-        overflow: scroll;
-    }
 
     #isiNews{
         font-size: medium;
-        overflow: scroll;
+        /* overflow: scroll; */
     }
 
     .card{
-        overflow: scroll;
+        /* overflow: scroll; */
     }
 
     .navbar-toggler{
