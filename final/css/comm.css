@@ -634,8 +634,7 @@ a{
 
 @media only screen and (max-width: 600px) {
     .nav-item {
-        margin-top: 1rem;
-        float: left;
+        margin: 2.5rem 0;
     }
 
     .mobile-block{
@@ -674,19 +673,23 @@ a{
         display: block;
         text-decoration: none;
         width: 100%;
+        float: right;
     }
 
     .navbtn2{
-        background-color: #F2AD3B;
-        color: black;
+        background-color: #BD1D22;
+        color: white;
+    }
+
+    #navbarSupportedContent{
+        float: inline-start;
     }
 
 }
 
 @media only screen and (max-width: 430px) {
     .nav-item {
-        margin-top: 1rem;
-        float: left;
+        margin: 2.5rem 0;
     }
 
     .mobile-block{
@@ -722,10 +725,15 @@ a{
         display: block;
         text-decoration: none;
         width: 100%;
+        float: right;
     }
 
     .navbtn2{
-        background-color: #F2AD3B;
-        color: black;
+        background-color: #BD1D22;
+        color: white;
+    }
+    
+    #navbarSupportedContent{
+        float: initial;
     }
 }
