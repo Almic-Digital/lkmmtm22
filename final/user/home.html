@@ -145,7 +145,7 @@
                 </div>
               </div>
               <div class="modal-footer">
-                <button type="button" class="navbtn2" style="background-color: #2276bf;" data-bs-dismiss="modal">Confirm</button>
+                <button type="button" onclick="change_status()" class="navbtn2" style="background-color: #2276bf;" data-bs-dismiss="modal">Confirm</button>
                 <button type="button" class="navbtn2" data-bs-dismiss="modal">Cancel</button>
               </div>
             </div>
@@ -178,7 +178,7 @@
                           
                         </div>
 
-                        <div style="border: none;">
+                        <div style="border: none;" id="footer-card">
                           <p>Apakah anda ingin mengikuti kegiatan secara online?</p>
                           <button type="button" class="navbtn2" data-bs-toggle="modal" data-bs-target="#confirmModal">
                             Ganti
@@ -378,6 +378,7 @@
     <script src="js/api/get_news.js"></script>
     <script src="js/api/alert_news.js"></script>
     <script src="js/api/check_absen.js"></script>
+    <script src="js/api/change_status.js"></script>
     <script src="js/api/logout.js"></script>
     <script>
         $(window).on("load",function(){
