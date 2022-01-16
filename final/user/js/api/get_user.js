@@ -12,6 +12,7 @@ function get_user(){
                 $("#status").html("Offline");
             }else{
                 $("#status").html("Online");
+                $("#footer-card").html("<p>Selamat mengikuti kegiatan.</p>")
             }
         },
         error: function ($xhr, textStatus, errorThrown) {
