@@ -768,10 +768,8 @@ body{
 
 @media only screen and (max-width: 600px) {
     .nav-item {
-        margin-top: 1rem;
-        float: left;
+        margin: 2.5rem 0;
     }
-
 
     .mobile-block{
         display: block;
@@ -831,8 +829,8 @@ body{
     }
 
     .navbtn2{
-        background-color: #F2AD3B;
-        color: black;
+        background-color: #BD1D22;
+        color: white;
     }
 
     #navs{
@@ -848,8 +846,7 @@ body{
 @media only screen and (max-width: 430px) {
 
     .nav-item {
-        margin-top: 1rem;
-        float: left;
+        margin: 2.5rem 0;
     }
 
     .mobile-block{
@@ -935,8 +932,8 @@ body{
     }
 
     .navbtn2{
-        background-color: #F2AD3B;
-        color: black;
+        background-color: #BD1D22;
+        color: white;
     }
 
 }

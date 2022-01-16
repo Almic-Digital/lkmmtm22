@@ -424,6 +424,8 @@ body{
     border-radius: 5px;
 }
 
+
+
 section{
     padding: 30px 0px;
 }
@@ -592,6 +594,10 @@ section{
         top: 10px;
     }
 
+    .nav-item {
+        margin: 2.5rem 0;
+    }
+
     #closed{
         left: 50%;
         top: 50%;
@@ -625,7 +631,7 @@ section{
     }
     
     #navs{
-        margin-top: 1rem;
+        /* margin-top: 1rem; */
         display: block;
         text-decoration: none;
         width: 100%;
@@ -633,8 +639,8 @@ section{
     }
 
     .navbtn2{
-        background-color: #F2AD3B;
-        color: black;
+        background-color: #BD1D22;
+        color: white;
     }
 }
 
@@ -659,6 +665,10 @@ section{
         font-size: 5pt;
     }
 
+    .nav-item {
+        margin: 2.5rem 0;
+    }
+
     #closed{
         display: none;
     }
@@ -683,7 +693,7 @@ section{
 
     
     #navs{
-        margin-top: 1rem;
+        /* margin-top: 1rem; */
         display: block;
         text-decoration: none;
         width: 100%;
@@ -691,7 +701,7 @@ section{
     }
 
     .navbtn2{
-        background-color: #F2AD3B;
-        color: black;
+        background-color: #BD1D22;
+        color: white;
     }
 }
