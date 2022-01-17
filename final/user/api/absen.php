@@ -60,7 +60,7 @@
                             $jam = $row['jam'];
                             $regis = $row['regis'];
                             $status=0;
-                            if(time() >= strtotime($hari. " " .$jam)){
+                            if(time() >= ($hari. " " .$jam)){
                                 $status = 1;
                             }
 
