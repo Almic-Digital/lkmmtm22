@@ -56,7 +56,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'GET') {
             $temp['hari'] = $date[$j]['hari'];
 
             if($k < $result_count && $result[$k]['nrp'] == $temp['nrp'] &&  $result[$k]['hari'] == $date[$j]['hari']){
-                if($k+1 < $result_count && $result[$k]['hari'] == $result[$k+1]['hari'] && $result[$k]['regis'] == 1 && $result[$k+1]['regis'] == 0){
+                if($k+1 < $result_count && $result[$k]['hari'] == $result[$k+1]['hari'] && $result[$k]['nrp'] == $result[$k+1]['nrp'] && $result[$k]['regis'] == 1 && $result[$k+1]['regis'] == 0){
                     $temp['waktu-in'] = $result[$k]['waktu'];
                     $temp['waktu-out'] = $result[$k+1]['waktu'];
                     $temp['status-in'] = $result[$k]['status'];
