@@ -60,7 +60,8 @@
                             $jam = $row['jam'];
                             $regis = $row['regis'];
                             $status=0;
-                            if(time() >= ($hari. " " .$jam)){
+							date_default_timezone_set("Asia/Jakarta");
+                            if(date("Y-m-d H:i:s") >= ($hari. " " .$jam)){
                                 $status = 1;
                             }
 
