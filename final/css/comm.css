@@ -146,9 +146,9 @@ li{
     outline: none;
 }
 
-svg text{
+/* svg text{
     stroke: #fff;
-    /* font-weight: bold; */
+    font-weight: bold;
     stroke-width: 1.5;
     animation: textAnimate 3s infinite alternate;
 }
@@ -164,7 +164,7 @@ svg text{
         stroke-dasharray: 50% 0;
         stroke-dashoffset: -20%;
     }
-}
+} */
 
 #closed{
     left: 45%;
@@ -604,7 +604,7 @@ a{
     font-size:24px;
     width:40px;
     height:40px;
-    line-height:40px;
+    /* line-height:40px; */
     display:inline-block;
     text-align:center;
     border-radius:50%;
@@ -693,6 +693,10 @@ a{
         float: none;
     }
 
+    .loading-wrapper text{
+        font-size: small;
+    }
+
 }
 
 @media only screen and (max-width: 430px) {
@@ -713,6 +717,10 @@ a{
 
     .editorial{
         overflow: hidden;
+    }
+
+    .loading-wrapper text{
+        font-size: small;
     }
 
     text{

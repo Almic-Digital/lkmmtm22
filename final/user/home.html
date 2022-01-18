@@ -30,20 +30,20 @@
                             </path>
                         </pattern>
                     </defs>
-                    <!-- <text text-anchor="middle" x="50" y="15" font-family="Montserrat, sans-serif" font-size="14"
+                    <text text-anchor="middle" x="50" y="15" font-family="Montserrat, sans-serif" font-size="14"
                         fill="white" fill-opacity="0.1" font-weight="bold">Loading</text>
                     <text text-anchor="middle" x="50" y="15" font-family="Montserrat, sans-serif" font-size="14"
-                        fill="url(#wave)" font-weight="bold" fill-opacity="1">Loading</text> -->
+                        fill="url(#wave)" font-weight="bold" fill-opacity="1">Loading</text>
                 </svg>
             </div>
             <div class="col-md-4"></div>
         </div>
 
 
-        <div class="wave wave1"></div>
-        <div class="wave wave2"></div>
-        <div class="wave wave3"></div>
-        <div class="wave wave4"></div>
+        <div class="wavef wave1"></div>
+        <div class="wavef wave2"></div>
+        <div class="wavef wave3"></div>
+        <div class="wavef wave4"></div>
         
     </div>
 
@@ -91,7 +91,7 @@
                 <button class="navbtn" onclick="logout()" style="font-family: Montserrat, sans-serif;">Logout</button> -->
             </div>
 
-            <svg viewBox="0 0 1150 600">
+            <!-- <svg viewBox="0 0 1150 600">
                 <text x="50%" y="10%" fill="transparent" text-anchor="middle" font-family="Montserrat, sans-serif" font-size="40">
                     LKMM - TM
                 </text>
@@ -99,10 +99,27 @@
                 <text x="50%" y="25%" fill="transparent" text-anchor="middle" font-family="Montserrat, sans-serif" font-size="40">
                     A Guidance of The Lighthouse
                 </text>
-            </svg>
+            </svg> -->
 
             <!-- <a class="navbtn2" id="closed" href="#mains" style="text-decoration: none;">Learn More</a> -->
             
+            <div class="container">
+              <div class="row">
+                <div class="col-md-3"></div>
+                <div class="col-md-6 text-center align-self-center">
+                  <div class="py-5">
+                    <img src="../asset/Logo/a.png" class="header-img" alt="">
+                    <a class="navbtn2" id="navb" href="#mainse" style="text-decoration: none;">Learn More</a>
+
+                  </div>
+
+                </div>
+                <div class="col-md-3"></div>
+              </div>
+            </div>
+
+
+
             <div class="wave wave1"></div>
             <div class="wave wave2"></div>
             <div class="wave wave3"></div>
@@ -154,7 +171,7 @@
     </section>
 
 
-    <section id="mains">
+    <section id="mainse">
         <div class="container">
             <div class="row">
                 <div class="col-md-2"></div>
@@ -343,15 +360,15 @@
                   <div class="footer-icon">
                       <div class="social">
                           <a href="https://www.instagram.com/lkmmtm_petra/">
-                            <i class="fab fa-instagram"></i>
+                            <i class="fab fa-instagram" style="color: white;"></i>
                           </a>
                           
                           <a href="#">
-                            <i class="fab fa-line"></i>
+                            <i class="fab fa-line" style="color: white;"></i>
                           </a>
 
                           <a href="#">
-                            <i class="fab fa-whatsapp"></i>
+                            <i class="fab fa-whatsapp" style="color: white;"></i>
                           </a>
                       </div>
                       
@@ -383,7 +400,7 @@
     <script src="js/api/session_check.js"></script>
     <script>
         $(window).on("load",function(){
-            $('.loading-wrapper').fadeOut(500);
+            $('.loading-wrapper').fadeOut(2500);
 
             var myModal = new bootstrap.Modal(document.getElementById('alertModal'));
             myModal.show();

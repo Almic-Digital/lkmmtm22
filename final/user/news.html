@@ -14,6 +14,40 @@
     <link rel="shortcut icon" href="../asset/Logo/favicon.png" type="image/x-icon">
 </head>
 <body id="mains">
+
+    <div class="loading-wrapper">
+        <div class="container">
+            <div class="col-md-4"></div>
+            <div class="col-md-4 text-center align-self-center m-auto">
+                <img class="crabAnim mb-3" src="../asset/ilustration/crab.png" alt="LKMMTM XXXI">
+                <svg viewbox="0 0 100 20">
+                    <defs>
+                        <pattern id="wave" x="0" y="-0.5" width="100%" height="100%" patternUnits="userSpaceOnUse">
+                            <path id="wavePath"
+                                d="M-40 9 Q-30 7 -20 9 T0 9 T20 9 T40 9 T60 9 T80 9 T100 9 T120 9 V20 H-40z"
+                                mask="url(#mask)" fill="#fff">
+                                <animateTransform attributeName="transform" begin="0s" dur="1.5s" type="translate"
+                                    from="0,0" to="40,0" repeatCount="indefinite" />
+                            </path>
+                        </pattern>
+                    </defs>
+                    <text text-anchor="middle" x="50" y="15" font-family="Montserrat, sans-serif" font-size="14"
+                        fill="white" fill-opacity="0.1" font-weight="bold">Loading</text>
+                    <text text-anchor="middle" x="50" y="15" font-family="Montserrat, sans-serif" font-size="14"
+                        fill="url(#wave)" font-weight="bold" fill-opacity="1">Loading</text>
+                </svg>
+            </div>
+            <div class="col-md-4"></div>
+        </div>
+
+
+        <div class="wave wave1"></div>
+        <div class="wave wave2"></div>
+        <div class="wave wave3"></div>
+        <div class="wave wave4"></div>
+        
+    </div>
+
   <nav class="navbar navbar-expand-xl navbar-light" style="padding-top: 0;">
     <div class="card1">
       <div class="card2">
@@ -50,7 +84,7 @@
     
     <section>
         <header>
-            <svg viewBox="0 0 1150 600">
+            <!-- <svg viewBox="0 0 1150 600">
 
                 <text x="50%" y="10%" fill="transparent" text-anchor="middle" font-family="Montserrat, sans-serif" font-size="40">
                     LKMM - TM
@@ -59,10 +93,26 @@
                 <text x="50%" y="25%" fill="transparent" text-anchor="middle" font-family="Montserrat, sans-serif" font-size="40">
                     A Guidance of The Lighthouse
                 </text>
-            </svg>
+            </svg> -->
 
             <!-- <a class="navbtn2" style="text-decoration: none;" id="closed" href="#mains">Learn More</a> -->
             
+            <div class="container">
+                <div class="row">
+                  <div class="col-md-3"></div>
+                  <div class="col-md-6 text-center align-self-center">
+                    <div class="py-5">
+                      <img src="../asset/Logo/a.png" class="header-img" alt="">
+                      <a class="navbtn2" id="navb" href="#berita" style="text-decoration: none;">Learn More</a>
+  
+                    </div>
+  
+                  </div>
+                  <div class="col-md-3"></div>
+                </div>
+              </div>
+
+
             <div class="wave wave1"></div>
             <div class="wave wave2"></div>
             <div class="wave wave3"></div>
@@ -71,7 +121,7 @@
         </header>
     </section>
 
-    <section>
+    <section id="berita">
         <div class="container">
             <div class="row">
                 <div class="col-md-2"></div>
@@ -116,41 +166,41 @@
     </section>
 
     <footer id="footer">
-      <div class="container">
-          <div class="row">
-            <div class="col-md-3">
-              <!-- <img src="asset/ilustration/Copy of coral.png" style="height: 300x; width: 100%;" alt=""> -->
-            </div>
-            <div class="col-md-6">
-                <div class="footer-icon">
-                    <div class="social">
-                        <a href="https://www.instagram.com/lkmmtm_petra/">
-                          <i class="fab fa-instagram"></i>
-                        </a>
-                        
-                        <a href="#">
-                          <i class="fab fa-line"></i>
-                        </a>
+        <div class="container">
+            <div class="row">
+              <div class="col-md-3">
+                <!-- <img src="asset/ilustration/Copy of coral.png" style="height: 300x; width: 100%;" alt=""> -->
+              </div>
+              <div class="col-md-6">
+                  <div class="footer-icon">
+                      <div class="social">
+                          <a href="https://www.instagram.com/lkmmtm_petra/">
+                            <i class="fab fa-instagram" style="color: white;"></i>
+                          </a>
+                          
+                          <a href="#">
+                            <i class="fab fa-line" style="color: white;"></i>
+                          </a>
 
-                        <a href="#">
-                          <i class="fab fa-whatsapp"></i>
-                        </a>
-                    </div>
-                    
-                </div>
+                          <a href="#">
+                            <i class="fab fa-whatsapp" style="color: white;"></i>
+                          </a>
+                      </div>
+                      
+                  </div>
+              </div>
+              <div class="col-md-3">
+                <!-- <img src="asset/ilustration/Copy of coral.png" style="height: 300x; width: 100%;" alt=""> -->
+              </div>
             </div>
-            <div class="col-md-3">
-              <!-- <img src="asset/ilustration/Copy of coral.png" style="height: 300x; width: 100%;" alt=""> -->
-            </div>
-          </div>
-      </div>
-      
-      <div class="footer-bottom">
-          <p class="copyright">Developed by LKMM-TM IT Division © 2022</p>
+        </div>
+        
+        <div class="footer-bottom">
+            <p class="copyright">Developed by LKMM-TM IT Division © 2022</p>
 
-      </div>
+        </div>
 
-  </footer>
+    </footer>
 
 
     
@@ -166,7 +216,7 @@
     
     <script>
         $(window).on("load",function(){
-            $('.loading-wrapper').fadeOut(500);
+            $('.loading-wrapper').fadeOut(2500);
         });
 
         const hamburger = document.querySelector(".hamburger");
