@@ -169,13 +169,13 @@ h2{
     text-align: center;
 }
 
-body{
+/* body{
     background: url("../../asset/Background/sea.png");
     width: 100%;
     background-size: cover;
     background-repeat: repeat;
     background-position: bottom;
-}
+} */
 
 
 @keyframes shaker {
